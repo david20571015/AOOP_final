@@ -12,3 +12,10 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_run_clicked()
+{
+    Data windata;
+    building.run();
+    windata=building.getData();
+}
