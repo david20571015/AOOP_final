@@ -20,7 +20,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>20</x>
       <y>90</y>
       <width>101</width>
       <height>16</height>
@@ -33,7 +33,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>20</x>
       <y>120</y>
       <width>101</width>
       <height>16</height>
@@ -46,7 +46,7 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>20</x>
       <y>150</y>
       <width>71</width>
       <height>16</height>
@@ -59,7 +59,7 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>20</x>
       <y>180</y>
       <width>71</width>
       <height>16</height>
@@ -69,10 +69,10 @@
      <string>Correct or not</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="testdata1">
+   <widget class="QLineEdit" name="line_testdata1">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>120</x>
       <y>90</y>
       <width>191</width>
       <height>20</height>
@@ -82,10 +82,10 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="submitdata1">
+   <widget class="QLineEdit" name="line_submitdata1">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>120</x>
       <y>120</y>
       <width>191</width>
       <height>20</height>
@@ -95,10 +95,10 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="spendtmie1">
+   <widget class="QLineEdit" name="line_spendtime1">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>120</x>
       <y>150</y>
       <width>191</width>
       <height>20</height>
@@ -108,10 +108,10 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="corr1">
+   <widget class="QLineEdit" name="line_corr1">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>120</x>
       <y>180</y>
       <width>191</width>
       <height>20</height>
@@ -121,12 +121,12 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="testdata2">
+   <widget class="QLineEdit" name="line_testdata2">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>420</x>
       <y>90</y>
-      <width>261</width>
+      <width>351</width>
       <height>20</height>
      </rect>
     </property>
@@ -137,7 +137,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>320</x>
       <y>150</y>
       <width>71</width>
       <height>16</height>
@@ -150,7 +150,7 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>320</x>
       <y>90</y>
       <width>101</width>
       <height>16</height>
@@ -163,7 +163,7 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>320</x>
       <y>120</y>
       <width>101</width>
       <height>16</height>
@@ -173,12 +173,12 @@
      <string>Submitdata</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="submitdata2">
+   <widget class="QLineEdit" name="line_submitdata2">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>420</x>
       <y>120</y>
-      <width>261</width>
+      <width>351</width>
       <height>20</height>
      </rect>
     </property>
@@ -189,7 +189,7 @@
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>320</x>
       <y>180</y>
       <width>71</width>
       <height>16</height>
@@ -199,12 +199,12 @@
      <string>Correct or not</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="spendtime2">
+   <widget class="QLineEdit" name="line_spendtime2">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>420</x>
       <y>150</y>
-      <width>261</width>
+      <width>351</width>
       <height>20</height>
      </rect>
     </property>
@@ -212,12 +212,12 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="corr2">
+   <widget class="QLineEdit" name="line_corr2">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>420</x>
       <y>180</y>
-      <width>261</width>
+      <width>351</width>
       <height>20</height>
      </rect>
     </property>

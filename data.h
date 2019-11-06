@@ -8,7 +8,7 @@ using namespace std;
 class Data
 {
 public:
-    Data();
+//    Data();
     qint64 spendtime1, spendtime2;
     string testdata1, testdata2;
     string submit1, submit2;

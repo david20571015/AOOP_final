@@ -11,7 +11,7 @@ using namespace std;
 class MyMath : public ProblemSet
 {
 public:
-    MyMath();
+//    MyMath();
     string solve(string);
     vector<int>stringtoVectorInt(string);
     string vectorIntToString(vector<int>);

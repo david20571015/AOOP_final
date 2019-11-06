@@ -7,11 +7,10 @@
 
 #include<string>
 
-
 class Building
 {
 public:
-    Building();
+    //Building();
     void run();
     Data getData(){return data;}
 private:

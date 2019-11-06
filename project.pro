@@ -21,6 +21,7 @@ SOURCES += \
     judge.cpp \
     main.cpp \
     mainwindow.cpp \
+    mymath.cpp \
     prime.cpp \
     problemset.cpp
 

@@ -3,17 +3,19 @@
 #include<string>
 #include<sstream>
 
-Add1::Add1()
-{
-}
-
 string Add1::solve(string s)
 {
-    stringstream ss;
+/*    stringstream ss;
     ss<<s;
     int n;
     string r;
     while(ss>>n)
         r+=(to_string(n+1)+" ");
-    return r;
+    r.erase(r.end()-1);
+*/
+    vector<int> input=stringtoVectorInt(s);
+    for(auto &i:input)
+        i+=1;
+
+    return vectorIntToString(input);
 }
