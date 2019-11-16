@@ -18,22 +18,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     add1.cpp \
     building.cpp \
+    fibonaccioffibonacci.cpp \
+    floor.cpp \
     judge.cpp \
+    longestpair.cpp \
     main.cpp \
     mainwindow.cpp \
     mymath.cpp \
     prime.cpp \
-    problemset.cpp
+    problemset.cpp \
+    shygame.cpp
 
 HEADERS += \
     add1.h \
     building.h \
     data.h \
+    fibonaccioffibonacci.h \
+    floor.h \
     judge.h \
+    longestpair.h \
     mainwindow.h \
     mymath.h \
     prime.h \
-    problemset.h
+    problemset.h \
+    shygame.h
 
 FORMS += \
     mainwindow.ui

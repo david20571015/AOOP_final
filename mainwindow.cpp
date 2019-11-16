@@ -10,22 +10,18 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    building.~Building();
     delete ui;
 }
 
 void MainWindow::on_run_clicked()
 {
     Data windata;
-    building.run();
+    building.run(ui->comboBox->currentIndex());
     windata=building.getData();
 
-    ui->line_testdata1->setText(QString::fromStdString(windata.testdata1));
-    ui->line_submitdata1->setText(QString::fromStdString(windata.submit1));
-    ui->line_spendtime1->setText(QString::number(windata.spendtime1));
-    ui->line_corr1->setText(QString::number(static_cast<int>(windata.correct1)));
-
-    ui->line_testdata2->setText(QString::fromStdString(windata.testdata2));
-    ui->line_submitdata2->setText(QString::fromStdString(windata.submit2));
-    ui->line_spendtime2->setText(QString::number(windata.spendtime2));
-    ui->line_corr2->setText(QString::number(static_cast<int>(windata.correct2)));
+    ui->line_testdata1->setText(QString::fromStdString(windata.testdata));
+    ui->line_submitdata1->setText(QString::fromStdString(windata.submit));
+    ui->line_spendtime1->setText(QString::number(windata.spendtime));
+    ui->line_corr1->setText(QString::number(static_cast<int>(windata.correct)));
 }

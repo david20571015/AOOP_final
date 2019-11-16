@@ -1,21 +1,27 @@
 #include<building.h>
 
-void Building::run()
+Building::Building()
 {
-    string s=judge.getData(0);
-    data.testdata1=s;
-    string s2=add1.solve(s);
-    data.submit1=s2;
-    bool correct=judge.submitData(s2);
-    data.correct1=correct;
-    data.spendtime1=judge.getSpendTime();
+    floor[0]=new Floor(new Add1());
+    floor[1]=new Floor(new Prime());
+    floor[2]=new Floor(new LongestPair());
+    floor[3]=new Floor(new ShyGame());
+    floor[4]=new Floor(new FibonacciOfFibonacci());
+}
 
-    //Advenced
-    s=judge.getData(1);
-    data.testdata2=s;
-    s2=prime.solve(s);
-    data.submit2=s2;
-    correct=judge.submitData(s2);
-    data.correct2=correct;
-    data.spendtime2=judge.getSpendTime();
+void Building::run(int n)
+{
+    string s=judge.getData(n);
+    data.testdata=s;
+    string s2=floor[n]->p->solve(s);
+    data.submit=s2;
+    bool correct=judge.submitData(s2);
+    data.correct=correct;
+    data.spendtime=judge.getSpendTime();
+}
+
+Building::~Building()
+{
+    for(int i=0;i<30;i++)
+        delete  floor[i];
 }

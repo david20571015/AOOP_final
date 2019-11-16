@@ -6,7 +6,7 @@
 class Prime : public MyMath
 {
 public:
-//    Prime();
+    Prime();
     string solve(string);
     inline int biggestPrime(const int &);
     inline bool isPrime(const int &);
