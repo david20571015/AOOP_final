@@ -6,7 +6,7 @@
 class Add1 : public MyMath
 {
 public:
-//    Add1();
+    Add1();
     string solve(string);
 };
 

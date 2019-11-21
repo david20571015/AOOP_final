@@ -9,9 +9,9 @@ class Data
 {
 public:
 //    Data();
-    qint64 spendtime1, spendtime2;
-    string testdata1, testdata2;
-    string submit1, submit2;
-    bool correct1, correct2;
+    qint64 spendtime;
+    string testdata;
+    string submit;
+    bool correct;
 };
 #endif // DATA_H

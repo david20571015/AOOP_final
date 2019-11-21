@@ -4,17 +4,11 @@
 #include<sstream>
 #include<cmath>
 
+Prime::Prime()
+{}
+
 string Prime::solve(string s)
 {
-    /*
-    stringstream ss;
-    ss<<s;
-    int n;
-    string r;
-    while(ss>>n)
-        r+=(to_string(biggestPrime(n))+" ");
-    r.erase(r.end()-1);
-    */
     vector<int> input=stringtoVectorInt(s);
     for(auto &i:input)
         i=biggestPrime(i);
