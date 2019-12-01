@@ -1,5 +1,5 @@
 #include "judge.h"
-#include<QDebug>
+
 Judge::Judge()
 {
 

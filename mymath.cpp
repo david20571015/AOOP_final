@@ -6,9 +6,6 @@ MyMath::MyMath()
 MyMath::~MyMath()
 {}
 
-string MyMath::solve(string s)
-{}
-
 vector<int> MyMath::stringtoVectorInt(string s)
 {
     vector<int> v;

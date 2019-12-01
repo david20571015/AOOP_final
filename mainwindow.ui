@@ -72,9 +72,9 @@
    <widget class="QLineEdit" name="line_testdata1">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>270</x>
       <y>90</y>
-      <width>441</width>
+      <width>511</width>
       <height>20</height>
      </rect>
     </property>
@@ -85,9 +85,9 @@
    <widget class="QLineEdit" name="line_submitdata1">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>270</x>
       <y>120</y>
-      <width>441</width>
+      <width>511</width>
       <height>20</height>
      </rect>
     </property>
@@ -98,9 +98,9 @@
    <widget class="QLineEdit" name="line_spendtime1">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>270</x>
       <y>150</y>
-      <width>441</width>
+      <width>511</width>
       <height>20</height>
      </rect>
     </property>
@@ -111,9 +111,9 @@
    <widget class="QLineEdit" name="line_corr1">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>270</x>
       <y>180</y>
-      <width>441</width>
+      <width>511</width>
       <height>20</height>
      </rect>
     </property>

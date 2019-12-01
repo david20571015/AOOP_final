@@ -14,13 +14,12 @@ string shortestsummation::solve(string s)
     {
         stringstream ss;
         string tmp;
-        vector<int> x,y;
+        vector<pair<int,int>> p;
+
         for(int j=0;j<house[i]*2;j++)
-        {
-           x.push_back(house[i+j*2+1]);
-           y.push_back(house[i+j*2+2]);
-        }
-        ss<<fixed<<setprecision(2)<<shortestDistance(x,y);
+           p.push_back(make_pair(house[i+j*2+1],house[i+j*2+2]));
+        this->point=p;
+        ss<<fixed<<setprecision(2)<<shortestDistance(p);
         ss>>tmp;
         ans+=tmp+' ';
     }
@@ -29,30 +28,74 @@ string shortestsummation::solve(string s)
     return ans;
 }
 
-double shortestsummation::shortestDistance(vector<int> &x,vector<int> &y)
+double shortestsummation::shortestDistance(vector<pair<int, int> > &p)
 {
-    double dis=0;
-    double min;
-    int h1,h2;
-    int n=x.size()/2;
+    int n= static_cast<int>(p.size());
+    double *dp=new double[1<<10];
+    double dis[100][100];
     for(int i=0;i<n;i++)
-    {
-        min=distance(x[0]-x[1],y[0]-y[1]);
-        for(int j=0;j<x.size()-1;j++)
-            for(int k=j+1;k<x.size();k++)
-                if(distance(x[j]-x[k],y[j]-y[k])<=min)
-                {
-                    min=distance(x[j]-x[k],y[j]-y[k]);
-                    h1=j;
-                    h2=k;
-                }
-        qDebug()<<x[h1]<<' '<<y[h1]<<"   "<<x[h2]<<' '<<y[h2];
-        dis+=min;
-        x.erase(x.begin()+h2);
-        x.erase(x.begin()+h1);
-        y.erase(y.begin()+h2);
-        y.erase(y.begin()+h1);
+        for(int j=0;j<n;j++)
+            dis[i][j]=hypot(p[i].first-p[j].first,p[i].second-p[j].second);
+
+    dp[0] = 0;
+    for(int S=1; S<(1<<n); S++){
+        dp[S] = 0x3f3f3f3f;
+        int i =0, cnt = 0;
+        for(int j=0; j<n; j++) if(S & (1<<j)) { i = j; cnt ++; }
+        if(cnt & 1) continue;
+        for(int j=0; j<i; j++) if(S & (1<<j))
+            dp[S] = min(dp[S], dis[i][j] + dp[S^(1<<i)^(1<<j)]);
     }
-    qDebug()<<dis;
-    return dis;
+    delete dp;
+    return  dp[(1<<n)-1];
 }
+
+
+
+
+
+
+
+//double shortestsummation::shortestDistance(vector<pair<int,int>> &p)
+//{
+//    int n=p.size();
+
+//    for(auto i:label)
+//        label[i]=0;
+
+//    this->dist=LONG_MAX;
+
+//    count=0;
+//    label[0]=1;
+//    vector<int> route(1,0);
+//    findDistance(route,n);
+//    qDebug()<<count;
+//    return this->dist;
+//}
+
+//void shortestsummation::findDistance(vector<int> &route, const int &n)
+//{
+//    if(static_cast<int>(route.size())==n)
+//    {
+//        for(auto i:route)
+//            qDebug()<<route[i];
+//        qDebug();
+//        double d=0;
+//        for(int i=0;i<point.size();i+=2)
+//            d+=hypot(point[i].first-point[i+1].first,point[i].second-point[i+1].second);
+//        this->dist=min(this->dist,d);
+//        return;
+//    }
+
+//    for(int i=1;i<n;i++)
+//    {
+//        if(!label[i])
+//        {
+//            route.push_back(i);
+//            label[i]=1;
+//            findDistance(route,n);
+//            label[i]=0;
+//            route.pop_back();
+//        }
+//    }
+//}

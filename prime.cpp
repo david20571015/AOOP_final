@@ -1,9 +1,5 @@
 #include "prime.h"
 
-#include<string>
-#include<sstream>
-#include<cmath>
-
 Prime::Prime()
 {}
 

@@ -1,8 +1,6 @@
 #ifndef SHYGAME_H
 #define SHYGAME_H
 
-#include<queue>
-
 #include"mymath.h"
 
 using namespace std;

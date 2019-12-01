@@ -1,7 +1,8 @@
 #ifndef PROBLEMSET_H
 #define PROBLEMSET_H
 
-#include<string>
+#include<bits/stdc++.h>
+#include<QDebug>
 
 using namespace std;
 

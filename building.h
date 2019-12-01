@@ -1,15 +1,11 @@
 #ifndef BUILDING_H
 #define BUILDING_H
+
 #include "judge.h"
 #include "data.h"
 #include "floor.h"
-#include "add1.h"
-#include "prime.h"
-#include "longestpair.h"
-#include "shygame.h"
-#include "fibonaccioffibonacci.h"
-#include "findfactorial.h"
-#include "shortestsummation.h"
+
+#include"problems.h"
 
 #include <string>
 

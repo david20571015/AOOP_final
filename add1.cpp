@@ -1,8 +1,5 @@
 #include "add1.h"
 
-#include<string>
-#include<sstream>
-
 Add1::Add1()
 {
 

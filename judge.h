@@ -1,12 +1,9 @@
 #ifndef JUDGE_H
 #define JUDGE_H
 
-#include<string>
+#include<bits/stdc++.h>
 #include<QtGlobal>
-#include<fstream>
 #include<QElapsedTimer>
-#include<cstdlib>
-#include<vector>
 
 using namespace std;
 

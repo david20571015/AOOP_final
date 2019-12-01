@@ -20,16 +20,22 @@ SOURCES += \
     building.cpp \
     fibonaccioffibonacci.cpp \
     findfactorial.cpp \
+    findtheperiodofstring.cpp \
     floor.cpp \
     judge.cpp \
+    largefactorial.cpp \
     longestpair.cpp \
     main.cpp \
     mainwindow.cpp \
+    minesweeper.cpp \
     mymath.cpp \
+    myother.cpp \
+    mystring.cpp \
     prime.cpp \
     problemset.cpp \
     shortestsummation.cpp \
-    shygame.cpp
+    shygame.cpp \
+    sumoflargehex.cpp
 
 HEADERS += \
     add1.h \
@@ -37,15 +43,22 @@ HEADERS += \
     data.h \
     fibonaccioffibonacci.h \
     findfactorial.h \
+    findtheperiodofstring.h \
     floor.h \
     judge.h \
+    largefactorial.h \
     longestpair.h \
     mainwindow.h \
+    minesweeper.h \
     mymath.h \
+    myother.h \
+    mystring.h \
     prime.h \
+    problems.h \
     problemset.h \
     shortestsummation.h \
-    shygame.h
+    shygame.h \
+    sumoflargehex.h
 
 FORMS += \
     mainwindow.ui
