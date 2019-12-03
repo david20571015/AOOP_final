@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     add1.cpp \
     building.cpp \
+    distancebetweenprime.cpp \
     fibonaccioffibonacci.cpp \
     findfactorial.cpp \
     findtheperiodofstring.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     add1.h \
     building.h \
     data.h \
+    distancebetweenprime.h \
     fibonaccioffibonacci.h \
     findfactorial.h \
     findtheperiodofstring.h \

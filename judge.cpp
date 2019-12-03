@@ -15,6 +15,7 @@ string Judge::getData(int question)
         data.push_back(s);
     in.close();
 
+//    srand(static_cast<int>(time(0)));
     int d=rand()%(data.size()/2);
     this->ans=data.at(d*2+1);
     timer.start();

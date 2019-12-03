@@ -9,7 +9,6 @@ public:
     Prime();
     string solve(string);
     inline int biggestPrime(const int &);
-    inline bool isPrime(const int &);
 };
 
 #endif // PRIME_H

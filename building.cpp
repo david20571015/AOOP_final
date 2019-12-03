@@ -13,6 +13,7 @@ Building::Building()
     floor[10]= new Floor(new FindThePeriodOfString());
     floor[11]= new Floor(new LargeFactorial());
     floor[12]= new Floor(new SumOfLargeHex());
+    floor[13]=new Floor(new DistanceBetweenPrime());
 }
 
 void Building::run(int n)

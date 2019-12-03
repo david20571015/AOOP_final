@@ -12,5 +12,6 @@
 #include"largefactorial.h"
 #include"sumoflargehex.h"
 #include"minesweeper.h"
+#include"distancebetweenprime.h"
 
 #endif // PROBLEMS_H
