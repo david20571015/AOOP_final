@@ -1,7 +1,7 @@
 #ifndef DISTANCEBETWEENPRIME_H
 #define DISTANCEBETWEENPRIME_H
 
-#include"mymath.h"
+#include "mymath.h"
 
 class DistanceBetweenPrime : public MyMath
 {

@@ -1,9 +1,9 @@
 #ifndef JUDGE_H
 #define JUDGE_H
 
-#include<bits/stdc++.h>
-#include<QtGlobal>
-#include<QElapsedTimer>
+#include <bits/stdc++.h>
+#include <QtGlobal>
+#include <QElapsedTimer>
 
 using namespace std;
 
@@ -13,7 +13,8 @@ public:
     Judge();
     string getData(int question);
     bool submitData(string ans);
-    qint64 getSpendTime(){return costtime;}
+    qint64 getSpendTime() { return costtime; }
+
 private:
     string ans;
     ifstream in;

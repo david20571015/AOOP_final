@@ -2,15 +2,12 @@
 
 ProblemSet::ProblemSet()
 {
-
 }
 
 ProblemSet::~ProblemSet()
 {
-
 }
 
 string ProblemSet::solve(string s)
 {
-
 }

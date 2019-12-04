@@ -2,9 +2,8 @@
 
 MyOther::MyOther()
 {
-
 }
 
 MyOther::~MyOther()
-{}
-
+{
+}

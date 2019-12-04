@@ -19,12 +19,14 @@ SOURCES += \
     add1.cpp \
     building.cpp \
     distancebetweenprime.cpp \
+    escape.cpp \
     fibonaccioffibonacci.cpp \
     findfactorial.cpp \
     findtheperiodofstring.cpp \
     floor.cpp \
     judge.cpp \
     largefactorial.cpp \
+    largestroot.cpp \
     longestpair.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -32,6 +34,7 @@ SOURCES += \
     mymath.cpp \
     myother.cpp \
     mystring.cpp \
+    mytree.cpp \
     prime.cpp \
     problemset.cpp \
     shortestsummation.cpp \
@@ -43,18 +46,21 @@ HEADERS += \
     building.h \
     data.h \
     distancebetweenprime.h \
+    escape.h \
     fibonaccioffibonacci.h \
     findfactorial.h \
     findtheperiodofstring.h \
     floor.h \
     judge.h \
     largefactorial.h \
+    largestroot.h \
     longestpair.h \
     mainwindow.h \
     minesweeper.h \
     mymath.h \
     myother.h \
     mystring.h \
+    mytree.h \
     prime.h \
     problems.h \
     problemset.h \

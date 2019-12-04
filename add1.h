@@ -1,7 +1,7 @@
 #ifndef ADD1_H
 #define ADD1_H
 
-#include<mymath.h>
+#include <mymath.h>
 
 class Add1 : public MyMath
 {

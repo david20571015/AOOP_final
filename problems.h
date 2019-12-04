@@ -8,10 +8,11 @@
 #include "fibonaccioffibonacci.h"
 #include "findfactorial.h"
 #include "shortestsummation.h"
-#include"findtheperiodofstring.h"
-#include"largefactorial.h"
-#include"sumoflargehex.h"
-#include"minesweeper.h"
-#include"distancebetweenprime.h"
+#include "findtheperiodofstring.h"
+#include "largefactorial.h"
+#include "sumoflargehex.h"
+#include "minesweeper.h"
+#include "distancebetweenprime.h"
+#include "largestroot.h"
 
 #endif // PROBLEMS_H

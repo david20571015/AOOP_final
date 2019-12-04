@@ -1,7 +1,7 @@
 #ifndef FINDFACTORIAL_H
 #define FINDFACTORIAL_H
 
-#include"mymath.h"
+#include "mymath.h"
 
 class findfactorial : public MyMath
 {

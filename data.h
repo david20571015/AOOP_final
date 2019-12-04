@@ -1,15 +1,15 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include<string>
-#include<QtGlobal>
+#include <string>
+#include <QtGlobal>
 
 using namespace std;
 
 class Data
 {
 public:
-//    Data();
+    //    Data();
     qint64 spendtime;
     string testdata;
     string submit;

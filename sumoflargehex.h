@@ -1,7 +1,7 @@
 #ifndef SUMOFLARGEHEX_H
 #define SUMOFLARGEHEX_H
 
-#include"mymath.h"
+#include "mymath.h"
 
 class SumOfLargeHex : public MyMath
 {

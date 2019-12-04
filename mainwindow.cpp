@@ -2,8 +2,7 @@
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
@@ -18,7 +17,7 @@ void MainWindow::on_run_clicked()
 {
     Data windata;
     building.run(ui->comboBox->currentIndex());
-    windata=building.getData();
+    windata = building.getData();
 
     ui->line_testdata1->setText(QString::fromStdString(windata.testdata));
     ui->line_submitdata1->setText(QString::fromStdString(windata.submit));

@@ -8,12 +8,13 @@ Building::Building()
     floor[3] = new Floor(new ShyGame());
     floor[4] = new Floor(new FibonacciOfFibonacci());
     floor[5] = new Floor(new Minesweeper());
+    floor[6] = new Floor(new LargestRoot());
     floor[8] = new Floor(new findfactorial());
     floor[9] = new Floor(new shortestsummation());
-    floor[10]= new Floor(new FindThePeriodOfString());
-    floor[11]= new Floor(new LargeFactorial());
-    floor[12]= new Floor(new SumOfLargeHex());
-    floor[13]=new Floor(new DistanceBetweenPrime());
+    floor[10] = new Floor(new FindThePeriodOfString());
+    floor[11] = new Floor(new LargeFactorial());
+    floor[12] = new Floor(new SumOfLargeHex());
+    floor[13] = new Floor(new DistanceBetweenPrime());
 }
 
 void Building::run(int n)

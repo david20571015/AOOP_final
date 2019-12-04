@@ -2,25 +2,26 @@
 
 DistanceBetweenPrime::DistanceBetweenPrime()
 {
-
 }
 
 string DistanceBetweenPrime::solve(string s)
 {
     stringstream ss;
-    ss<<s;
-    int n,upperbound,lowerbound;
+    ss << s;
+    int n, upperbound, lowerbound;
     string ans;
-    while(ss>>n)
+    while (ss >> n)
     {
-        upperbound=n;
-        lowerbound=n;
-        while(!isPrime(upperbound++));
-        while(!isPrime(lowerbound--));
-        ans+=to_string(upperbound-lowerbound-2)+' ';
+        upperbound = n;
+        lowerbound = n;
+        while (!isPrime(upperbound++))
+            ;
+        while (!isPrime(lowerbound--))
+            ;
+        ans += to_string(upperbound - lowerbound - 2) + ' ';
     }
 
-    ans.erase(ans.end()-1);
+    ans.erase(ans.end() - 1);
 
     return ans;
 }

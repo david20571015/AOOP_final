@@ -2,8 +2,8 @@
 
 MyString::MyString()
 {
-
 }
 
 MyString::~MyString()
-{}
+{
+}

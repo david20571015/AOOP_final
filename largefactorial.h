@@ -1,7 +1,7 @@
 #ifndef LARGEFACTORIAL_H
 #define LARGEFACTORIAL_H
 
-#include"mymath.h"
+#include "mymath.h"
 
 class LargeFactorial : public MyMath
 {
