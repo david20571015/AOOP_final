@@ -10,6 +10,8 @@ class Data
 {
 public:
     //    Data();
+    int score;
+    int nowfloor;
     qint64 spendtime;
     string testdata;
     string submit;

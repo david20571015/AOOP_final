@@ -14,8 +14,10 @@ public:
     string getData(int question);
     bool submitData(string ans);
     qint64 getSpendTime() { return costtime; }
+    int getScore(){return  score;}
 
 private:
+    int score;
     string ans;
     ifstream in;
     QElapsedTimer timer;

@@ -14,5 +14,6 @@
 #include "minesweeper.h"
 #include "distancebetweenprime.h"
 #include "largestroot.h"
+#include "escape.h"
 
 #endif // PROBLEMS_H

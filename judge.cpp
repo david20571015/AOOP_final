@@ -2,6 +2,7 @@
 
 Judge::Judge()
 {
+    score=0;
 }
 
 string Judge::getData(int question)
@@ -24,5 +25,7 @@ string Judge::getData(int question)
 bool Judge::submitData(string ans)
 {
     costtime = timer.nsecsElapsed();
-    return ans == this->ans;
+    if(ans.compare(this->ans)==0)
+        score+=100;
+    return ans.compare(this->ans)==0;
 }

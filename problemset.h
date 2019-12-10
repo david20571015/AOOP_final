@@ -11,7 +11,7 @@ class ProblemSet
 public:
     ProblemSet();
     virtual ~ProblemSet();
-    virtual string solve(string s) = 0;
+    virtual string solve(string) = 0;
 };
 
 #endif // PROBLEMSET_H

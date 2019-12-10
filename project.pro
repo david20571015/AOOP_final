@@ -37,6 +37,7 @@ SOURCES += \
     mytree.cpp \
     prime.cpp \
     problemset.cpp \
+    scheduler.cpp \
     shortestsummation.cpp \
     shygame.cpp \
     sumoflargehex.cpp
@@ -64,6 +65,7 @@ HEADERS += \
     prime.h \
     problems.h \
     problemset.h \
+    scheduler.h \
     shortestsummation.h \
     shygame.h \
     sumoflargehex.h

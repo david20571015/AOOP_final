@@ -22,6 +22,10 @@ public:
 private slots:
     void on_run_clicked();
 
+    void on_start_clicked();
+
+    void slot_update_data();
+
 private:
     Building building;
     Ui::MainWindow *ui;

@@ -9,9 +9,6 @@ public:
     Escape();
     virtual ~Escape();
     string solve(string);
-private:
-    char **maze;
-    short int **step;
 };
 
 #endif // ESCAPE_H
