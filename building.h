@@ -2,6 +2,7 @@
 #define BUILDING_H
 
 #include "judge.h"
+#include "judgewindow.h"
 #include "data.h"
 #include "floor.h"
 #include "scheduler.h"
@@ -32,6 +33,7 @@ private:
     QTimer *simu_timer;
     Scheduler scheduler;
     Judge judge;
+    JudgeWindow *judgewindow;
     Data data;
     Floor *floor[30];
 };

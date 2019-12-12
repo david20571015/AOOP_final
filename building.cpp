@@ -2,6 +2,10 @@
 
 Building::Building()
 {
+    judgewindow = new JudgeWindow();
+    judgewindow->show();
+    judgewindow->setSeed(0);
+    int n=judgewindow->getConditionNum();
     simu_timer = new QTimer();
     connect(simu_timer,SIGNAL(timeout()),this,SLOT(update()));
 
