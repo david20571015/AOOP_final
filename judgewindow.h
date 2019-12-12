@@ -2,8 +2,10 @@
 #define JUDGEWINDOW_H
 
 #include <QWidget>
-
+#include <QSqlDatabase>
+#include <QSqlQuery>
 #include<bits/stdc++.h>
+#include "initialcondition.h"
 using namespace std;
 
 namespace Ui {
@@ -13,7 +15,7 @@ class JudgeWindow;
 class JudgeWindow : public QWidget
 {
     Q_OBJECT
-
+    QSqlQuery query;
 public:
     explicit JudgeWindow(QWidget *parent = nullptr);
     string getData(int floor,int b);
@@ -26,8 +28,11 @@ public:
     ~JudgeWindow();
 
 private:
+    string ans;
     qint64 costtime;
     int distance;
+    int conditionNum;
+    InitialCondition condition[27];
     Ui::JudgeWindow *ui;
 };
 

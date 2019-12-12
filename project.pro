@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,6 +24,7 @@ SOURCES += \
     findfactorial.cpp \
     findtheperiodofstring.cpp \
     floor.cpp \
+    initialcondition.cpp \
     judge.cpp \
     judgewindow.cpp \
     largefactorial.cpp \
@@ -53,6 +54,7 @@ HEADERS += \
     findfactorial.h \
     findtheperiodofstring.h \
     floor.h \
+    initialcondition.h \
     judge.h \
     judgewindow.h \
     largefactorial.h \
