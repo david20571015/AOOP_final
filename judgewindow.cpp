@@ -6,6 +6,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     ui(new Ui::JudgeWindow)
 {
     string st;
+    distance = 0;
     ui->setupUi(this);
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QMYSQL");
@@ -49,12 +50,12 @@ string JudgeWindow::getData(int floor,int b)
 {
 
     string st;
+    distance += abs(condition[floor].Dest - floor);
     query.exec("use Course8");
     st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor) + ") as t2 order by rand() limit 1";
     query.exec(QString::fromStdString(st));
 
     query.next();
-
 
     ans = query.value(3).toString().toStdString();
     timer.start();

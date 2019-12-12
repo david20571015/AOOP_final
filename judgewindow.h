@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QElapsedTimer>
+
 #include<bits/stdc++.h>
 #include "initialcondition.h"
 using namespace std;
@@ -32,6 +34,7 @@ private:
     qint64 costtime;
     int distance;
     int conditionNum;
+    QElapsedTimer timer;
     InitialCondition condition[27];
     Ui::JudgeWindow *ui;
 };
