@@ -5,7 +5,7 @@ InitialCondition::InitialCondition()
 
 }
 
-InitialCondition::setCondition(string s, int a, int b, int d)
+void InitialCondition::setCondition(string s, int a, int b, int d)
 {
     Id = s;
     Nowfloor=a;

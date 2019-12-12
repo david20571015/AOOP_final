@@ -5,6 +5,8 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QElapsedTimer>
+#include <QElapsedTimer>
+#include <QLineEdit>
 
 #include<bits/stdc++.h>
 #include "initialcondition.h"
@@ -22,20 +24,28 @@ public:
     explicit JudgeWindow(QWidget *parent = nullptr);
     string getData(int floor,int b);
     bool submitData(string ans);
-    void setSeed(int seed){srand(seed);}
+    void setSeed(int seed){srand(static_cast<unsigned int>(seed));}
     qint64 getSpendTime(){return costtime;}
     int getConditionNum();
     int getDistance(){return distance;}
     void scheduleEnd();
     ~JudgeWindow();
-
+    int arrive[27];
 private:
+    int population;
     string ans;
     qint64 costtime;
     int distance;
     int conditionNum;
     QElapsedTimer timer;
     InitialCondition condition[27];
+    QLineEdit showline[27][4];
+    int score;
+    int floor;
+    int numOfCorr;
+    int numOfQues;
+    fstream time;
+    string answer;
     Ui::JudgeWindow *ui;
 };
 

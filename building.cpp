@@ -2,6 +2,9 @@
 
 Building::Building()
 {
+    judgewindow.show();
+    judgewindow.setSeed(0);
+    int n=judgewindow.getConditionNum();
     simu_timer = new QTimer();
     connect(simu_timer,SIGNAL(timeout()),this,SLOT(update()));
 
@@ -33,24 +36,23 @@ Building::Building()
 
 void Building::run(int n)
 {
-    string s = judge.getData(n);
-    data.testdata = s;
-    string s2 = floor[n]->p->solve(s);
-    data.submit = s2;
-    bool correct = judge.submitData(s2);
-    data.correct = correct;
-    data.spendtime = judge.getSpendTime();
-    data.score=judge.getScore();
+    data.testdata = judge.getData(n);
+    data.submit = floor[n]->p->solve(data.testdata);
+    data.correct = judgewindow.submitData(data.submit);
+    data.spendtime = judgewindow.getSpendTime();
+    data.score = judge.getScore();
+    data.distance = judgewindow.getDistance();
 }
 
 void Building::startSimulation()
 {
-    simu_timer->start(1000);
-    scheduler.reset();
+    simu_timer->start(100);
+    simu_timer->setSingleShot(1);
 }
 
 void Building::update()
 {
+    simu_timer->start(100);
     data.nowfloor=scheduler.getNowFloor();
     if(data.nowfloor)
         run(data.nowfloor);

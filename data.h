@@ -9,7 +9,8 @@ using namespace std;
 class Data
 {
 public:
-    //    Data();
+    int distance;
+    int elevatorpeople;
     int score;
     int nowfloor;
     qint64 spendtime;
