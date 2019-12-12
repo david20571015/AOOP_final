@@ -2,6 +2,8 @@
 #define JUDGEWINDOW_H
 
 #include <QWidget>
+#include <QElapsedTimer>
+#include <QLineEdit>
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -26,9 +28,14 @@ public:
     ~JudgeWindow();
 
 private:
+    QLineEdit showline[27][4];
+    int score;
+    string answer;
+    QElapsedTimer timer;
     qint64 costtime;
     int distance;
     Ui::JudgeWindow *ui;
+
 };
 
 #endif // JUDGEWINDOW_H
