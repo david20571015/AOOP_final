@@ -31,11 +31,14 @@ private:
     QLineEdit showline[27][4];
     int score;
     int distance;
+    int floor;
+    int numOfCorr;
+    int numOfQues;
+    fstream time;
     string answer;
     QElapsedTimer timer;
     qint64 costtime;
     Ui::JudgeWindow *ui;
-
 };
 
 #endif // JUDGEWINDOW_H

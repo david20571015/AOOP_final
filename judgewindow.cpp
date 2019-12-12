@@ -11,6 +11,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     for(int i=0;i<27;i++)
         for(int j=0;j<4;j++)
             ui->gridLayout->addWidget(&showline[i][j],i,j);
+    time.open("time.txt");
 }
 
 JudgeWindow::~JudgeWindow()
@@ -28,3 +29,13 @@ bool JudgeWindow::submitData(string ans)
     }
     return 0;
 }
+
+void JudgeWindow::scheduleEnd()
+{
+    time<<floor<<','
+        <<getSpendTime()<<','
+        <<numOfCorr<<','
+        <<numOfQues<<endl;
+}
+
+

@@ -49,7 +49,6 @@ void Building::startSimulation()
 {
     simu_timer->start(100);
     simu_timer->setSingleShot(1);
-    scheduler.reset();
 }
 
 void Building::update()
