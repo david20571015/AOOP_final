@@ -6,6 +6,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     ui(new Ui::JudgeWindow)
 {
     score=0;
+    distance=0;
     ui->setupUi(this);
     for(int i=0;i<27;i++)
         for(int j=0;j<4;j++)

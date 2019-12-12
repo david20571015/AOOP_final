@@ -20,7 +20,7 @@ public:
     explicit JudgeWindow(QWidget *parent = nullptr);
     string getData(int floor,int b);
     bool submitData(string ans);
-    void setSeed(int seed){srand(seed);}
+    void setSeed(int seed){srand(static_cast<unsigned int>(seed));}
     qint64 getSpendTime(){return costtime;}
     int getConditionNum();
     int getDistance(){return distance;}
@@ -30,10 +30,10 @@ public:
 private:
     QLineEdit showline[27][4];
     int score;
+    int distance;
     string answer;
     QElapsedTimer timer;
     qint64 costtime;
-    int distance;
     Ui::JudgeWindow *ui;
 
 };
