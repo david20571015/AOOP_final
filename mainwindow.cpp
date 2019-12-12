@@ -34,8 +34,7 @@ void MainWindow::on_start_clicked()
 
 void MainWindow::slot_update_data()
 {
-    Data windata;
-    windata = building.getData();
+    Data windata = building.getData();;
 
     if(windata.nowfloor)
     {
@@ -45,6 +44,9 @@ void MainWindow::slot_update_data()
         ui->line_corr1->setText(QString::number(static_cast<int>(windata.correct)));
         ui->line_score->setText(QString::number(windata.score));
         ui->comboBox->setCurrentIndex(windata.nowfloor);
+        ui->LCD_noweleavator->display(windata.nowfloor);
+        ui->LCD_people->display(windata.elevatorpeople);
+        ui->LCD_distance->display(windata.distance);
     }
     else
         ui->finish->setVisible(1);
