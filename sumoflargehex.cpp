@@ -16,7 +16,7 @@ string SumOfLargeHex::solve(string s)
     {
         if (tmp == "0")
             break;
-        for (int i = tmp.size() - 1; i >= 0; i--)
+        for (int i = static_cast<int>(tmp.size() - 1) ; i >= 0; i--)
             n[i] += transtoint(tmp[tmp.size() - i - 1]);
     }
 
@@ -48,6 +48,6 @@ int SumOfLargeHex::transtoint(char c)
 char SumOfLargeHex::transtochar(int n)
 {
     if (n >= 0 && n <= 9)
-        return n + '0';
-    return n + 'a' - 10;
+        return static_cast<char>(n + '0') ;
+    return static_cast<char>(n + 'a' - 10);
 }
