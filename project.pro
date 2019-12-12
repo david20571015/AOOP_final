@@ -25,6 +25,7 @@ SOURCES += \
     findtheperiodofstring.cpp \
     floor.cpp \
     judge.cpp \
+    judgewindow.cpp \
     largefactorial.cpp \
     largestroot.cpp \
     longestpair.cpp \
@@ -53,6 +54,7 @@ HEADERS += \
     findtheperiodofstring.h \
     floor.h \
     judge.h \
+    judgewindow.h \
     largefactorial.h \
     largestroot.h \
     longestpair.h \
@@ -71,6 +73,7 @@ HEADERS += \
     sumoflargehex.h
 
 FORMS += \
+    judgewindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.
