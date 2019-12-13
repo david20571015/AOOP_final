@@ -19,19 +19,26 @@ SOURCES += \
     add1.cpp \
     building.cpp \
     distancebetweenprime.cpp \
-    escape.cpp \
+    escapeifyouwanttosurvive.cpp \
     fibonaccioffibonacci.cpp \
     findfactorial.cpp \
+    findstructuresoftrees.cpp \
     findtheperiodofstring.cpp \
     floor.cpp \
+    getsignature.cpp \
+    getsolution.cpp \
     initialcondition.cpp \
     judge.cpp \
     judgewindow.cpp \
     largefactorial.cpp \
     largestroot.cpp \
+    longestcommonsubstring.cpp \
     longestpair.cpp \
+    longestpeekpalindrome.cpp \
     main.cpp \
     mainwindow.cpp \
+    marioojisan.cpp \
+    maze.cpp \
     minesweeper.cpp \
     mymath.cpp \
     myother.cpp \
@@ -40,27 +47,36 @@ SOURCES += \
     prime.cpp \
     problemset.cpp \
     scheduler.cpp \
-    shortestsummation.cpp \
+    shortestandlongestpair.cpp \
+    shortestsummationdistance.cpp \
     shygame.cpp \
-    sumoflargehex.cpp
+    subtract1.cpp \
+    sumoflargehexadecimalintegers.cpp
 
 HEADERS += \
     add1.h \
     building.h \
     data.h \
     distancebetweenprime.h \
-    escape.h \
+    escapeifyouwanttosurvive.h \
     fibonaccioffibonacci.h \
     findfactorial.h \
+    findstructuresoftrees.h \
     findtheperiodofstring.h \
     floor.h \
+    getsignature.h \
+    getsolution.h \
     initialcondition.h \
     judge.h \
     judgewindow.h \
     largefactorial.h \
     largestroot.h \
+    longestcommonsubstring.h \
     longestpair.h \
+    longestpeekpalindrome.h \
     mainwindow.h \
+    marioojisan.h \
+    maze.h \
     minesweeper.h \
     mymath.h \
     myother.h \
@@ -70,9 +86,11 @@ HEADERS += \
     problems.h \
     problemset.h \
     scheduler.h \
-    shortestsummation.h \
+    shortestandlongestpair.h \
+    shortestsummationdistance.h \
     shygame.h \
-    sumoflargehex.h
+    subtract1.h \
+    sumoflargehexadecimalintegers.h
 
 FORMS += \
     judgewindow.ui \

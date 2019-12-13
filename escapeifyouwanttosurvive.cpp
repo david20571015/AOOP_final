@@ -1,14 +1,14 @@
-#include "escape.h"
+#include "escapeifyouwanttosurvive.h"
 
-Escape::Escape()
+EscapeIfYouWantToSurvive::EscapeIfYouWantToSurvive()
 {
 }
 
-Escape::~Escape()
+EscapeIfYouWantToSurvive::~EscapeIfYouWantToSurvive()
 {
 }
 
-string Escape::solve(string s)
+string EscapeIfYouWantToSurvive::solve(string s)
 {
     stringstream ss;
     ss << s;
