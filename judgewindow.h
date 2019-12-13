@@ -7,6 +7,10 @@
 #include <QElapsedTimer>
 #include <QElapsedTimer>
 #include <QLineEdit>
+<<<<<<< HEAD
+=======
+#include <QDebug>
+>>>>>>> 6e821c8d428cb51f86fe7469126b4e77f806df10
 
 #include<bits/stdc++.h>
 #include "initialcondition.h"

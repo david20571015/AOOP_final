@@ -12,7 +12,7 @@ string FibonacciOfFibonacci::solve(string s)
 {
     vector<int> n = stringtoVectorInt(s);
     string ans;
-    for (int i = 0; i < n.size(); i++)
+    for (int i = 0; i < static_cast<int>(n.size()); i++)
         ans += to_string(digit[fib(n[i]) % 60]) + ' ';
 
     ans.erase(ans.end() - 1);

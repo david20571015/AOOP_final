@@ -8,7 +8,7 @@ string findfactorial::solve(string s)
 {
     vector<double> n = stringtoVectorDouble(s);
     string ans;
-    for (int i = 0; i < n.size(); i++)
+    for (int i = 0; i < static_cast<int>(n.size()); i++)
     {
         for (long long int f = 1;; f++)
         {

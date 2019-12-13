@@ -9,7 +9,7 @@ string shortestsummation::solve(string s)
     string ans;
     vector<int> house = stringtoVectorInt(s);
 
-    for (int i = 0; i < house.size(); i += house[i] * 4 + 1)
+    for (int i = 0; i < static_cast<int>(house.size()) ; i += house[i] * 4 + 1)
     {
         stringstream ss;
         string tmp;
@@ -53,7 +53,7 @@ double shortestsummation::shortestDistance(vector<pair<int, int>> &p)
             if (S & (1 << j))
                 dp[S] = min(dp[S], dis[i][j] + dp[S ^ (1 << i) ^ (1 << j)]);
     }
-    delete dp;
+    delete []dp;
     return dp[(1 << n) - 1];
 }
 
