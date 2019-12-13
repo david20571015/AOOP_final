@@ -3,6 +3,7 @@
 ShyGame::ShyGame()
 {
 }
+
 string ShyGame::solve(string input)
 {
     string s, ans, st;

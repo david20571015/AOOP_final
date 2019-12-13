@@ -3,10 +3,10 @@
 
 #include "mymath.h"
 
-class SumOfLargeHex : public MyMath
+class SumOfLargeHexadecimalIntegers : public MyMath
 {
 public:
-    SumOfLargeHex();
+    SumOfLargeHexadecimalIntegers();
     string solve(string);
     int transtoint(char);
     char transtochar(int);

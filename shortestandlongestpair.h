@@ -3,17 +3,17 @@
 
 #include "mymath.h"
 
-class shortestsummation : public MyMath
+class ShortestAndLongestPair : public MyMath
 {
 public:
-    shortestsummation();
+    ShortestAndLongestPair();
     string solve(string);
     double distance(const pair<int, int> &p1, const pair<int, int> &p2)
     {
-        return sqrt((p1.first - p2.first) + p1.second * p2.second);
+        return sqrt((p1.first - p2.first) * (p1.first - p2.first)
+                    + (p1.second - p2.second) * (p1.second - p2.second));
     }
     double shortestDistance(vector<pair<int, int>> &);
-    //    void findDistance(vector<int>&,const int &);
 private:
     vector<pair<int, int>> point;
     double dist;

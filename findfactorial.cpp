@@ -1,10 +1,10 @@
 #include "findfactorial.h"
 
-findfactorial::findfactorial()
+FindFactorial::FindFactorial()
 {
 }
 
-string findfactorial::solve(string s)
+string FindFactorial::solve(string s)
 {
     vector<double> n = stringtoVectorDouble(s);
     string ans;
@@ -28,7 +28,7 @@ string findfactorial::solve(string s)
     return ans;
 }
 
-int findfactorial::numberOfPrime(long long int &n)
+int FindFactorial::numberOfPrime(long long int &n)
 {
     int sum = 0;
     for (int i = 2; i <= n; i++)
@@ -46,7 +46,7 @@ int findfactorial::numberOfPrime(long long int &n)
     return sum;
 }
 
-bool findfactorial::isPrime(const int &n)
+bool FindFactorial::isPrime(const int &n)
 {
     if (n == 1)
         return 0;

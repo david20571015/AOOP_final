@@ -1,10 +1,10 @@
-#include "sumoflargehex.h"
+#include "sumoflargehexadecimalintegers.h"
 
-SumOfLargeHex::SumOfLargeHex()
+SumOfLargeHexadecimalIntegers::SumOfLargeHexadecimalIntegers()
 {
 }
 
-string SumOfLargeHex::solve(string s)
+string SumOfLargeHexadecimalIntegers::solve(string s)
 {
     stringstream ss;
     string tmp;
@@ -38,14 +38,14 @@ string SumOfLargeHex::solve(string s)
     return ans;
 }
 
-int SumOfLargeHex::transtoint(char c)
+int SumOfLargeHexadecimalIntegers::transtoint(char c)
 {
     if (c >= '0' && c <= '9')
         return c - '0';
     return c - 'a' + 10;
 }
 
-char SumOfLargeHex::transtochar(int n)
+char SumOfLargeHexadecimalIntegers::transtochar(int n)
 {
     if (n >= 0 && n <= 9)
         return static_cast<char>(n + '0') ;

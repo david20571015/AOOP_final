@@ -3,10 +3,10 @@
 
 #include "mymath.h"
 
-class findfactorial : public MyMath
+class FindFactorial : public MyMath
 {
 public:
-    findfactorial();
+    FindFactorial();
     string solve(string);
     int numberOfPrime(long long int &);
     bool isPrime(const int &);

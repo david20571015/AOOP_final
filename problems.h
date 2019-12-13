@@ -16,8 +16,8 @@ typedef ShyGame P4;
 #include "fibonaccioffibonacci.h"
 typedef FibonacciOfFibonacci P5;
 
-#include "largesroot.h"
-typedef LargesRoot P6;
+#include "largestroot.h"
+typedef LargestRoot P6;
 
 #include "findstructuresoftrees.h"
 typedef FindStructuresOfTrees P7;

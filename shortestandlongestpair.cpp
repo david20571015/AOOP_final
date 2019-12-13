@@ -1,10 +1,10 @@
-#include "shortestsummation.h"
+#include "shortestandlongestpair.h"
 
-shortestsummation::shortestsummation()
+ShortestAndLongestPair::ShortestAndLongestPair()
 {
 }
 
-string shortestsummation::solve(string s)
+string ShortestAndLongestPair::solve(string s)
 {
     string ans;
     vector<int> house = stringtoVectorInt(s);
@@ -27,7 +27,7 @@ string shortestsummation::solve(string s)
     return ans;
 }
 
-double shortestsummation::shortestDistance(vector<pair<int, int>> &p)
+double ShortestAndLongestPair::shortestDistance(vector<pair<int, int>> &p)
 {
     int n = static_cast<int>(p.size());
     double *dp = new double[1 << 10];
