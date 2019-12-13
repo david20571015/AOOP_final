@@ -10,7 +10,8 @@
 #include "problems.h"
 
 #include <QTimer>
-#include <string>
+#include <bits/stdc++.h>
+using namespace std;
 
 class Building:public QObject
 {

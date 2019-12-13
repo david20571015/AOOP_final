@@ -1,6 +1,6 @@
 #include "judgewindow.h"
 #include "ui_judgewindow.h"
-#include <QDebug>
+
 JudgeWindow::JudgeWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::JudgeWindow)
@@ -52,16 +52,14 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     for(int i=0;i<27;i++)
         for(int j=0;j<4;j++)
             ui->gridLayout->addWidget(&showline[i][j],i,j);
-//    time.open("time.txt");
 
     for(int i=0;i<27;i++)
      {
-
         showline[i][0].setText(QString::number(condition[i].Number));
         showline[i][1].setText(QString::number(arrive[i]));
         showline[i][2].setText(QString::number(0));
         showline[i][3].setText(QString::number(0));
-    }
+     }
 
 }
 
@@ -117,8 +115,12 @@ bool JudgeWindow::submitData(string ans)
 
 void JudgeWindow::scheduleEnd()
 {
+    time.open("time.txt",ios::app);
+
     time<<floor<<','
         <<getSpendTime()<<','
         <<numOfCorr<<','
         <<numOfQues<<endl;
+
+    time.close();
 }
