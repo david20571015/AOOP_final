@@ -7,7 +7,7 @@ class FibonacciOfFibonacci : public MyMath
 {
 public:
     FibonacciOfFibonacci();
-    string solve(string);
+    string solve(const string &);
     long long int fib(int n);
 
 private:

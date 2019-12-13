@@ -7,7 +7,7 @@ class DistanceBetweenPrime : public MyMath
 {
 public:
     DistanceBetweenPrime();
-    string solve(string);
+    string solve(const string &);
 };
 
 #endif // DISTANCEBETWEENPRIME_H

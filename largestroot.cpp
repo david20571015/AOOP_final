@@ -4,7 +4,7 @@ LargestRoot::LargestRoot()
 {
 }
 
-string LargestRoot::solve(string s)
+string LargestRoot::solve(const string &s)
 {
     stringstream ss;
     ss << s;

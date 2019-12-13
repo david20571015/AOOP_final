@@ -4,14 +4,14 @@ ShyGame::ShyGame()
 {
 }
 
-string ShyGame::solve(string input)
+string ShyGame::solve(const string &s)
 {
-    string s, ans, st;
+    string ans, st;
     stringstream ss, t;
     int m, n;
     queue<int> q;
     ss.clear();
-    ss << input;
+    ss << s;
     ss >> n;
     while (ss >> m)
     {

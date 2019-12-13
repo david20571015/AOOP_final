@@ -7,7 +7,7 @@ class ShortestSummationDistance : public MyMath
 {
 public:
     ShortestSummationDistance();
-    string solve(string);
+    string solve(const string &);
     double shortestDistance(vector<pair<int, int>> &);
 private:
     vector<pair<int, int>> point;

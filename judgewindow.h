@@ -9,7 +9,7 @@
 #include <QLineEdit>
 #include <QDebug>
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #include "initialcondition.h"
 using namespace std;
 

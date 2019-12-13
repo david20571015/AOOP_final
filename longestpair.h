@@ -7,7 +7,7 @@ class LongestPair : public MyMath
 {
 public:
     LongestPair();
-    string solve(string);
+    string solve(const string &);
     double distSqrt(double x, double y, double z)
     {
         return x * x + y * y + z * z;

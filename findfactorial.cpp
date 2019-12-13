@@ -4,7 +4,7 @@ FindFactorial::FindFactorial()
 {
 }
 
-string FindFactorial::solve(string s)
+string FindFactorial::solve(const string &s)
 {
     vector<double> n = stringtoVectorDouble(s);
     string ans;

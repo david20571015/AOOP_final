@@ -8,7 +8,7 @@ class MyString : public ProblemSet
 public:
     MyString();
     virtual ~MyString();
-    virtual string solve(string) = 0;
+    string solve(const string &) = 0;
 };
 
 #endif // MYSTRING_H

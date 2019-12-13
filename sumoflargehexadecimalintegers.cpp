@@ -4,7 +4,7 @@ SumOfLargeHexadecimalIntegers::SumOfLargeHexadecimalIntegers()
 {
 }
 
-string SumOfLargeHexadecimalIntegers::solve(string s)
+string SumOfLargeHexadecimalIntegers::solve(const string &s)
 {
     stringstream ss;
     string tmp;

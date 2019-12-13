@@ -4,7 +4,7 @@ LongestPair::LongestPair()
 {
 }
 
-string LongestPair::solve(string s)
+string LongestPair::solve(const string &s)
 {
     vector<double> point = stringtoVectorDouble(s);
     int n = point.size() / 3;

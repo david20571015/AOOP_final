@@ -4,10 +4,10 @@ FindThePeriodOfString::FindThePeriodOfString()
 {
 }
 
-string FindThePeriodOfString::solve(string s)
+string FindThePeriodOfString::solve(const string &s)
 {
 
-    for (int i = 1; i <= static_cast<int>(s.size()); i++)
+    for (int i = static_cast<int>(s.size()); i >= 1; i--)
     {
         if (static_cast<int>(s.size()) % i)
             continue;

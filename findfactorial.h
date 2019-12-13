@@ -7,7 +7,7 @@ class FindFactorial : public MyMath
 {
 public:
     FindFactorial();
-    string solve(string);
+    string solve(const string &);
     int numberOfPrime(long long int &);
     bool isPrime(const int &);
 };

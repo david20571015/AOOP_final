@@ -9,7 +9,7 @@ class ShyGame : public MyMath
 {
 public:
     ShyGame();
-    string solve(string);
+    string solve(const string &);
 };
 
 #endif // SHYGAME_H

@@ -8,7 +8,7 @@ FibonacciOfFibonacci::FibonacciOfFibonacci()
         digit[i] = (digit[i - 1] + digit[i - 2]) % 10;
 }
 
-string FibonacciOfFibonacci::solve(string s)
+string FibonacciOfFibonacci::solve(const string &s)
 {
     vector<int> n = stringtoVectorInt(s);
     string ans;

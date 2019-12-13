@@ -7,9 +7,9 @@ class SumOfLargeHexadecimalIntegers : public MyMath
 {
 public:
     SumOfLargeHexadecimalIntegers();
-    string solve(string);
-    int transtoint(char);
-    char transtochar(int);
+    string solve(const string &);
+    inline int transtoint(char);
+    inline char transtochar(int);
 };
 
 #endif // SUMOFLARGEHEX_H

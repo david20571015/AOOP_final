@@ -7,7 +7,7 @@ class LargeFactorial : public MyMath
 {
 public:
     LargeFactorial();
-    string solve(string);
+    string solve(const string &);
 };
 
 #endif // LARGEFACTORIAL_H

@@ -7,6 +7,7 @@ class MarioOjisan : public MyMath
 {
 public:
     MarioOjisan();
+    string solve(const string &);
 };
 
 #endif // MARIOOJISAN_H

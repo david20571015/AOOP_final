@@ -4,7 +4,7 @@ ShortestSummationDistance::ShortestSummationDistance()
 {
 }
 
-string ShortestSummationDistance::solve(string s)
+string ShortestSummationDistance::solve(const string &s)
 {
     string ans;
     vector<int> house = stringtoVectorInt(s);

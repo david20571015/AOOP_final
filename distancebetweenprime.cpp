@@ -4,7 +4,7 @@ DistanceBetweenPrime::DistanceBetweenPrime()
 {
 }
 
-string DistanceBetweenPrime::solve(string s)
+string DistanceBetweenPrime::solve(const string &s)
 {
     stringstream ss;
     ss << s;

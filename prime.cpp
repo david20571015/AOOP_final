@@ -4,7 +4,7 @@ Prime::Prime()
 {
 }
 
-string Prime::solve(string s)
+string Prime::solve(const string &s)
 {
     vector<int> input = stringtoVectorInt(s);
     for (auto &i : input)

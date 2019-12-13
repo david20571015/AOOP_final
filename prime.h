@@ -7,7 +7,7 @@ class Prime : public MyMath
 {
 public:
     Prime();
-    string solve(string);
+    string solve(const string &);
     inline int biggestPrime(const int &);
 };
 
