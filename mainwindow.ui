@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>354</height>
+    <height>531</height>
    </rect>
   </property>
   <property name="tabletTracking">
@@ -20,8 +20,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>90</y>
+      <x>160</x>
+      <y>50</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -33,8 +33,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>120</y>
+      <x>160</x>
+      <y>80</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -46,8 +46,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>150</y>
+      <x>160</x>
+      <y>110</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -59,8 +59,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>180</y>
+      <x>160</x>
+      <y>140</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -72,8 +72,8 @@
    <widget class="QLineEdit" name="line_testdata1">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>90</y>
+      <x>260</x>
+      <y>50</y>
       <width>511</width>
       <height>20</height>
      </rect>
@@ -85,8 +85,8 @@
    <widget class="QLineEdit" name="line_submitdata1">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>120</y>
+      <x>260</x>
+      <y>80</y>
       <width>511</width>
       <height>20</height>
      </rect>
@@ -98,8 +98,8 @@
    <widget class="QLineEdit" name="line_spendtime1">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>150</y>
+      <x>260</x>
+      <y>110</y>
       <width>511</width>
       <height>20</height>
      </rect>
@@ -111,8 +111,8 @@
    <widget class="QLineEdit" name="line_corr1">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>180</y>
+      <x>260</x>
+      <y>140</y>
       <width>511</width>
       <height>20</height>
      </rect>
@@ -124,10 +124,10 @@
    <widget class="QPushButton" name="run">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>270</y>
-      <width>80</width>
-      <height>20</height>
+      <x>10</x>
+      <y>90</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -137,8 +137,8 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>20</y>
+      <x>30</x>
+      <y>30</y>
       <width>72</width>
       <height>22</height>
      </rect>
@@ -282,21 +282,21 @@
    <widget class="QPushButton" name="start">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>60</y>
+      <x>10</x>
+      <y>150</y>
       <width>121</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Start Simulation</string>
+     <string>Simulation</string>
     </property>
    </widget>
    <widget class="QLabel" name="finish">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>160</y>
+      <y>320</y>
       <width>91</width>
       <height>51</height>
      </rect>
@@ -311,8 +311,8 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>210</y>
+      <x>160</x>
+      <y>170</y>
       <width>47</width>
       <height>12</height>
      </rect>
@@ -324,10 +324,79 @@
    <widget class="QLineEdit" name="line_score">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>210</y>
+      <x>260</x>
+      <y>170</y>
       <width>511</width>
       <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>240</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Now Elevator</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>300</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>People in Elevator</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>360</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Distance</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LCD_noweleavator">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>240</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LCD_people">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>300</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LCD_distance">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>360</y>
+      <width>64</width>
+      <height>23</height>
      </rect>
     </property>
    </widget>
