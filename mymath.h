@@ -9,10 +9,13 @@ public:
     MyMath();
     virtual ~MyMath();
     string solve(string) = 0;
-    vector<int> stringtoVectorInt(string);
-    string vectorIntToString(vector<int>);
-    vector<double> stringtoVectorDouble(string);
-    string vectorDoubleToString(vector<double>);
+
+    template <class T>
+    inline vector<T> stringToVector(const string &);
+
+    template <class T>
+    inline string vectorToString(const vector<T> &);
+
     bool isPrime(const int &);
     inline unsigned long long int pow_mod(const int &, const int &, const int &);
 };
