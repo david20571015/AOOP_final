@@ -4,7 +4,7 @@ LargeFactorial::LargeFactorial()
 {
 }
 
-string LargeFactorial::solve(string s)
+string LargeFactorial::solve(const string &s)
 {
 
     int n = stoi(s);

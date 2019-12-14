@@ -7,7 +7,7 @@ class FindThePeriodOfString : public MyString
 {
 public:
     FindThePeriodOfString();
-    string solve(string);
+    string solve(const string &);
 };
 
 #endif // FINDTHEPERIODOFSTRING_H

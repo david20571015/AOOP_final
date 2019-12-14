@@ -7,7 +7,7 @@ class Add1 : public MyMath
 {
 public:
     Add1();
-    string solve(string);
+    string solve(const string &);
 };
 
 #endif // ADD1_H

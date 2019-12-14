@@ -7,6 +7,7 @@ class Maze : public MyOther
 {
 public:
     Maze();
+    string solve(const string &);
 };
 
 #endif // MAZE_H

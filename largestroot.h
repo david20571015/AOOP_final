@@ -7,7 +7,7 @@ class LargestRoot : public MyTree
 {
 public:
     LargestRoot();
-    string solve(string s);
+    string solve(const string &);
 
 protected:
     double node[15];

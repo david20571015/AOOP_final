@@ -7,7 +7,7 @@ class Minesweeper : public MyOther
 {
 public:
     Minesweeper();
-    string solve(string);
+    string solve(const string &);
 
 private:
 };

@@ -8,7 +8,7 @@ EscapeIfYouWantToSurvive::~EscapeIfYouWantToSurvive()
 {
 }
 
-string EscapeIfYouWantToSurvive::solve(string s)
+string EscapeIfYouWantToSurvive::solve(const string &s)
 {
     stringstream ss;
     ss << s;

@@ -8,7 +8,7 @@ class MyTree : public ProblemSet
 public:
     MyTree();
     virtual ~MyTree();
-    string solve(string) = 0;
+    string solve(const string &) = 0;
 };
 
 #endif // MYTREE_H

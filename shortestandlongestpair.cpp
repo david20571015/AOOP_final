@@ -4,7 +4,7 @@ ShortestAndLongestPair::ShortestAndLongestPair()
 {
 }
 
-string ShortestAndLongestPair::solve(string s)
+string ShortestAndLongestPair::solve(const string &s)
 {
     string ans;
     vector<int> house = stringtoVectorInt(s);

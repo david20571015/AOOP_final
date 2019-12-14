@@ -4,7 +4,7 @@ Minesweeper::Minesweeper()
 {
 }
 
-string Minesweeper::solve(string s)
+string Minesweeper::solve(const string &s)
 {
     stringstream ss;
     ss << s;

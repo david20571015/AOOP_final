@@ -7,6 +7,7 @@ class FindStructuresOfTrees : public MyTree
 {
 public:
     FindStructuresOfTrees();
+    string solve(const string &);
 };
 
 #endif // FINDSTRUCTURESOFTREES_H

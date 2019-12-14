@@ -7,7 +7,7 @@ class ShortestAndLongestPair : public MyMath
 {
 public:
     ShortestAndLongestPair();
-    string solve(string);
+    string solve(const string &);
     double distance(const pair<int, int> &p1, const pair<int, int> &p2)
     {
         return sqrt((p1.first - p2.first) * (p1.first - p2.first)

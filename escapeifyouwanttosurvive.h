@@ -8,7 +8,7 @@ class EscapeIfYouWantToSurvive : public MyOther
 public:
     EscapeIfYouWantToSurvive();
     virtual ~EscapeIfYouWantToSurvive();
-    string solve(string);
+    string solve(const string &);
 };
 
 #endif // ESCAPE_H

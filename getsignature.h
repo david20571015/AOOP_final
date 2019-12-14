@@ -7,6 +7,7 @@ class GetSignature : public MyOther
 {
 public:
     GetSignature();
+    string solve(const string &);
 };
 
 #endif // GETSIGNATURE_H

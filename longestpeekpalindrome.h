@@ -7,6 +7,7 @@ class LongestPeekPalindrome : public MyString
 {
 public:
     LongestPeekPalindrome();
+    string solve(const string &);
 };
 
 #endif // LONGESTPEEKPALINDROME_H
