@@ -43,12 +43,8 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     query.exec("create table TestData(Id char(8)primary key, Floor int, Question text, answer text)");
     query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/testdata.csv' INTO TABLE TestData FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
 
-<<<<<<< HEAD
-=======
-
-
     //-----------getData-----------
-  score=0;
+    score=0;
     distance=0;
     ui->setupUi(this);
     for(int i=0;i<27;i++)
@@ -64,27 +60,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
      }
 
 }
->>>>>>> 6e821c8d428cb51f86fe7469126b4e77f806df10
 
-
-<<<<<<< HEAD
-    //-----------getData-----------
-  score=0;
-    distance=0;
-    ui->setupUi(this);
-    for(int i=0;i<27;i++)
-        for(int j=0;j<4;j++)
-            ui->gridLayout->addWidget(&showline[i][j],i,j);
-//    time.open("time.txt");
-
-    for(int i=0;i<27;i++)
-     {
-
-        showline[i][0].setText(QString::number(condition[i].Number));
-        showline[i][1].setText(QString::number(arrive[i]));
-        showline[i][2].setText(QString::number(0));
-        showline[i][3].setText(QString::number(0));
-=======
 string JudgeWindow::getData(int floor,int b)
 {
 
@@ -126,60 +102,13 @@ bool JudgeWindow::submitData(string ans)
     {
         score+=100;
         return 1;
->>>>>>> 6e821c8d428cb51f86fe7469126b4e77f806df10
     }
 
 }
 
 JudgeWindow::~JudgeWindow()
 {
-<<<<<<< HEAD
     delete ui;
-}
-
-string JudgeWindow::getData(int floor,int b)
-{
-
-    string st;
-    distance += abs(condition[floor].Dest - floor);
-    if(b)
-    {
-        if(condition[floor].Number + population <= 10)
-        {
-            population += condition[floor].Number;
-            condition[floor].Number = 0;
-        }
-        else
-        {
-            condition[floor].Number -= 10 - population;
-            population = 10;
-        }
-    }
-    else
-
-    this->floor=floor;
-    query.exec("use Course8");
-    st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor) + ") as t2 order by rand() limit 1";
-    query.exec(QString::fromStdString(st));
-    query.next();
-    ans = query.value(3).toString().toStdString();
-    timer.start();
-    return query.value(2).toString().toStdString();
-}
-int JudgeWindow::getConditionNum()
-{
-    return conditionNum;
-}
-
-bool JudgeWindow::submitData(string ans)
-{
-    costtime = timer.nsecsElapsed();
-    if(!ans.compare(answer))
-    {
-        score+=100;
-        return 1;
-    }
-    return 0;
 }
 
 void JudgeWindow::scheduleEnd()
@@ -188,8 +117,7 @@ void JudgeWindow::scheduleEnd()
         <<getSpendTime()<<','
         <<numOfCorr<<','
         <<numOfQues<<endl;
-}
-=======
+
     time.open("time.txt",ios::app);
 
     time<<floor<<','
@@ -199,4 +127,3 @@ void JudgeWindow::scheduleEnd()
 
     time.close();
 }
->>>>>>> 6e821c8d428cb51f86fe7469126b4e77f806df10

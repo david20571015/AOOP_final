@@ -8,6 +8,7 @@ class GetSignature : public MyOther
 public:
     GetSignature();
     string solve(const string &);
+    virtual ~GetSignature(){}
 };
 
 #endif // GETSIGNATURE_H

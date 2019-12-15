@@ -8,6 +8,7 @@ class GetSolution : public MyMath
 public:
     GetSolution();
     string solve(const string &);
+    virtual ~GetSolution(){}
 };
 
 #endif // GETSOLUTION_H

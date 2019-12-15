@@ -8,6 +8,7 @@ class LongestCommonSubstring : public MyString
 public:
     LongestCommonSubstring();
     string solve(const string &);
+    virtual ~LongestCommonSubstring(){}
 };
 
 #endif // LONGESTCOMMONSUBSTRING_H

@@ -80,6 +80,6 @@ typedef TheEasyCity2 P25;
 typedef LongestShortestDistance P26;
 
 #include "symmetricpairs.h"
-typedef SymmetricPairs P26;
+typedef SymmetricPairs P27;
 
 #endif // PROBLEMS_H

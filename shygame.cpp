@@ -3,35 +3,49 @@
 ShyGame::ShyGame()
 {
 }
-
-string ShyGame::solve(const string &s)
+string ShyGame::solve(const string &input)
 {
-    string ans, st;
-    stringstream ss, t;
-    int m, n;
-    queue<int> q;
+    string ans;
     ss.clear();
-    ss << s;
+    ss << input;
     ss >> n;
-    while (ss >> m)
+    for (M = 1; M < n + 1; M <<= 1)
+        ;
+    while (ss >> p)
     {
-        for (int i = 0; i < n; i++)
-            q.push(i + 1);
-        while (q.size() > 1)
+        for (i = 2 * M - 1; i > 0; i--)
         {
-            for (int i = 0; i < m - 1; i++)
+            if (i >= M)
+                st[i] = 1;
+            else
+                st[i] = st[i << 1] + st[i << 1 | 1];
+        }
+        int m, last, prev = 0, s;
+        for (i = 1; i <= n; i++)
+        {
+            m = (p + prev) % (n - i + 1);
+            if (m == 0)
+                m = n - i + 1;
+            prev = m - 1;
+            for (s = 1; s < M;)
             {
-                q.push(q.front());
-                q.pop();
+                if (st[s << 1] < m)
+                    m -= st[s << 1], s = s << 1 | 1;
+                else
+                    s = s << 1;
             }
-            q.pop();
+            last = s - M + 1;
+            while (s)
+            {
+                st[s]--;
+                s >>= 1;
+            }
         }
         t.clear();
-        t << q.front();
-        t >> st;
-        ans += st;
+        t << last;
+        t >> ts;
+        ans += ts;
         ans += " ";
-        q.pop();
     }
     ans.erase(ans.end() - 1);
     return ans;

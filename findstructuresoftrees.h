@@ -8,6 +8,7 @@ class FindStructuresOfTrees : public MyTree
 public:
     FindStructuresOfTrees();
     string solve(const string &);
+    virtual ~FindStructuresOfTrees(){}
 };
 
 #endif // FINDSTRUCTURESOFTREES_H

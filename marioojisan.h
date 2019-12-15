@@ -8,6 +8,7 @@ class MarioOjisan : public MyMath
 public:
     MarioOjisan();
     string solve(const string &);
+    virtual ~MarioOjisan(){}
 };
 
 #endif // MARIOOJISAN_H

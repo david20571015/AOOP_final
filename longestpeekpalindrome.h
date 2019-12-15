@@ -8,6 +8,7 @@ class LongestPeekPalindrome : public MyString
 public:
     LongestPeekPalindrome();
     string solve(const string &);
+    virtual ~LongestPeekPalindrome(){}
 };
 
 #endif // LONGESTPEEKPALINDROME_H

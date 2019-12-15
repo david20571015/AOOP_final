@@ -35,11 +35,14 @@ SOURCES += \
     longestcommonsubstring.cpp \
     longestpair.cpp \
     longestpeekpalindrome.cpp \
+    longestshortestdistance.cpp \
     main.cpp \
     mainwindow.cpp \
+    manhattandistance.cpp \
     marioojisan.cpp \
     maze.cpp \
     minesweeper.cpp \
+    mydatabase.cpp \
     mymath.cpp \
     myother.cpp \
     mystring.cpp \
@@ -51,7 +54,11 @@ SOURCES += \
     shortestsummationdistance.cpp \
     shygame.cpp \
     subtract1.cpp \
-    sumoflargehexadecimalintegers.cpp
+    sumoflargehexadecimalintegers.cpp \
+    symmetricpairs.cpp \
+    theeasycity1.cpp \
+    theeasycity2.cpp \
+    themedian.cpp
 
 HEADERS += \
     add1.h \
@@ -74,10 +81,13 @@ HEADERS += \
     longestcommonsubstring.h \
     longestpair.h \
     longestpeekpalindrome.h \
+    longestshortestdistance.h \
     mainwindow.h \
+    manhattandistance.h \
     marioojisan.h \
     maze.h \
     minesweeper.h \
+    mydatabase.h \
     mymath.h \
     myother.h \
     mystring.h \
@@ -90,7 +100,11 @@ HEADERS += \
     shortestsummationdistance.h \
     shygame.h \
     subtract1.h \
-    sumoflargehexadecimalintegers.h
+    sumoflargehexadecimalintegers.h \
+    symmetricpairs.h \
+    theeasycity1.h \
+    theeasycity2.h \
+    themedian.h
 
 FORMS += \
     judgewindow.ui \
