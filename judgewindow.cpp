@@ -13,7 +13,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("nctuece");
+    database.setPassword("l0963577306");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
@@ -26,10 +26,11 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     query.exec("create table PeopleList(Id char(8)primary key, Nowfloor int, Destination int, Number int)");
     query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/initial_condition.csv' INTO TABLE PeopleList FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
 
-
+    setSeed(0);
     conditionNum = rand() % 300 + 1;
     st = "select * from PeopleList where Id like '%0" + to_string(conditionNum) + "-%'";
     query.exec(QString::fromStdString(st));
+    qDebug() << conditionNum;
     for(int i=0;i<27;i++)
         arrive[i] = 0;
     for (int i = 0; i < 27; i++)
@@ -80,13 +81,15 @@ string JudgeWindow::getData(int floor,int b)
         }
     }
     else
+    {
 
+    }
     this->floor=floor;
     query.exec("use Course8");
-    st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor) + ") as t2 order by rand() limit 1";
+    st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor + 1) + ") as t2 order by rand() limit 1";
     query.exec(QString::fromStdString(st));
     query.next();
-    ans = query.value(3).toString().toStdString();
+    answer = query.value(3).toString().toStdString();
     timer.start();
     return query.value(2).toString().toStdString();
 }

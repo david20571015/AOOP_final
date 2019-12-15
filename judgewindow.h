@@ -34,7 +34,6 @@ public:
     int arrive[27];
 private:
     int population;
-    string ans;
     qint64 costtime;
     int distance;
     int conditionNum;

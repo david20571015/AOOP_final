@@ -3,7 +3,7 @@
 Building::Building()
 {
     judgewindow.show();
-    judgewindow.setSeed(0);
+//    judgewindow.setSeed(0);
     int n=judgewindow.getConditionNum();
     simu_timer = new QTimer();
     connect(simu_timer,SIGNAL(timeout()),this,SLOT(update()));
@@ -39,7 +39,7 @@ Building::Building()
 
 void Building::run(int n)
 {
-    data.testdata = judge.getData(n);
+    data.testdata = judgewindow.getData(n, 1);
     data.submit = floor[n]->p->solve(data.testdata);
     data.correct = judgewindow.submitData(data.submit);
     data.spendtime = judgewindow.getSpendTime();
