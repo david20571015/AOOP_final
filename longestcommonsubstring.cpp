@@ -4,3 +4,8 @@ LongestCommonSubstring::LongestCommonSubstring()
 {
 
 }
+
+string LongestCommonSubstring::solve(const string &s)
+{
+
+}

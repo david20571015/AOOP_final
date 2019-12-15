@@ -103,7 +103,7 @@ bool JudgeWindow::submitData(string ans)
         score+=100;
         return 1;
     }
-
+    return 0;
 }
 
 JudgeWindow::~JudgeWindow()

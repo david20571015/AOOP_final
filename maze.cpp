@@ -4,3 +4,8 @@ Maze::Maze()
 {
 
 }
+
+string Maze::solve(const string &s)
+{
+
+}

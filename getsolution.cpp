@@ -4,3 +4,8 @@ GetSolution::GetSolution()
 {
 
 }
+
+string GetSolution::solve(const string &s)
+{
+
+}
