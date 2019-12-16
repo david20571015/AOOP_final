@@ -89,7 +89,7 @@ string TheEasyCity2::solve(const string &s)
     //     ans += t;
     // }
     query.exec("use Course7");
-    query.next();
+//    query.next();
     ss >> n; // nth city
     n--;
     t1 = to_string(n);
