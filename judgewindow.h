@@ -28,6 +28,7 @@ public:
     void setSeed(int seed){srand(static_cast<unsigned int>(seed));}
     qint64 getSpendTime(){return costtime;}
     int getConditionNum();
+    void getInitial(int *,int *);
     int getDistance(){return distance;}
     void scheduleEnd();
     ~JudgeWindow();

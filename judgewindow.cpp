@@ -93,6 +93,16 @@ string JudgeWindow::getData(int floor,int b)
     timer.start();
     return query.value(2).toString().toStdString();
 }
+
+void JudgeWindow::getInitial(int *dest, int *people)
+{
+    for(int i=0;i<27;i++)
+    {
+        dest[i]=condition[i].Dest;
+        people[i]=condition[i].Number;
+    }
+}
+
 int JudgeWindow::getConditionNum()
 {
     return conditionNum;

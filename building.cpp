@@ -7,6 +7,7 @@ Building::Building()
     int n=judgewindow.getConditionNum();
     simu_timer = new QTimer();
     connect(simu_timer,SIGNAL(timeout()),this,SLOT(update()));
+    judgewindow.getInitial(dest,people);
 
     floor[0]  = new Floor(new P1);
     floor[1]  = new Floor(new P2);
@@ -43,7 +44,7 @@ void Building::run(int n)
     data.submit = floor[n]->p->solve(data.testdata);
     data.correct = judgewindow.submitData(data.submit);
     data.spendtime = judgewindow.getSpendTime();
-    data.score = judge.getScore();
+//    data.score = judge.getScore();
     data.distance = judgewindow.getDistance();
 }
 

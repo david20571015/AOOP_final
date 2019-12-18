@@ -32,9 +32,11 @@ signals:
     void updateGUI();
 
 private:
+    int dest[27];
+    int people[27];
     QTimer *simu_timer;
     Scheduler scheduler;
-    Judge judge;
+//    Judge judge;
     JudgeWindow judgewindow;
     Data data;
     Floor *floor[30];

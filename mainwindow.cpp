@@ -34,7 +34,7 @@ void MainWindow::on_start_clicked()
 
 void MainWindow::slot_update_data()
 {
-    Data windata = building.getData();;
+    Data windata = building.getData();
 
     if(windata.nowfloor)
     {
