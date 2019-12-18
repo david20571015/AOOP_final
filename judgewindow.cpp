@@ -17,7 +17,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
-    qDebug()<<"DBOPEN?" << t;
+//    qDebug()<<"DBOPEN?" << t;
     query.exec("drop database if exists Course8");
     query.exec("create database Course8");
     query.exec("use Course8");
@@ -30,7 +30,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     conditionNum = rand() % 300 + 1;
     st = "select * from PeopleList where Id like '%0" + to_string(conditionNum) + "-%'";
     query.exec(QString::fromStdString(st));
-    qDebug() << conditionNum;
+//    qDebug() << conditionNum;
     for(int i=0;i<27;i++)
         arrive[i] = 0;
     for (int i = 0; i < 27; i++)

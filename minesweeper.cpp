@@ -6,8 +6,6 @@ Minesweeper::Minesweeper()
 
 string Minesweeper::solve(const string &s)
 {
-    return s;
-
     stringstream ss;
     ss << s;
     int col, row;
@@ -55,7 +53,5 @@ string Minesweeper::solve(const string &s)
     for (int c = 1; c <= col; c++)
         ans += mine[c].substr(1, row) + ' ';
     ans.erase(ans.end() - 1);
-
     return ans;
-
 }

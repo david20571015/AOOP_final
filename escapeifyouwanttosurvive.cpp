@@ -33,11 +33,16 @@ string EscapeIfYouWantToSurvive::solve(const string &s)
         for (int j = 0; j < col; j++)
         {
             if (maze[i][j] == 'J')
+            {
                 joe_pos = make_pair(i, j);
+                joe[i][j] = 1;
+            }
             else if (maze[i][j] == 'F')
+            {
                 f = make_pair(i, j);
+                fire[i][j] = 1;
+            }
         }
-    fire[f.first][f.second] = 1;
 
     queue<pair<short, short>> fireRoute;
     fireRoute.push(f);
@@ -77,28 +82,28 @@ string EscapeIfYouWantToSurvive::solve(const string &s)
     while (!joeRoute.empty())
     {
         curr = joeRoute.front();
-        time = joe[curr.first][curr.second];
+        time = joe[curr.first][curr.second] + 1;
         if (curr.first == 0 || curr.first == row - 1 || curr.second == 0 || curr.second == col - 1)
-            return to_string(time+1);
+            return to_string(time - 1);
 
-        if (curr.first > 0 && joe[curr.first - 1][curr.second] == 0 && time < fire[curr.first - 1][curr.second])
+        if (curr.first > 0 && joe[curr.first - 1][curr.second] == 0 && (time < fire[curr.first - 1][curr.second] || !fire[curr.first - 1][curr.second]))
         {
-            joe[curr.first - 1][curr.second] = time + 1;
+            joe[curr.first - 1][curr.second] = time;
             joeRoute.push(make_pair(curr.first - 1, curr.second));
         }
-        if (curr.first < row - 1 && joe[curr.first + 1][curr.second] == 0 && time < fire[curr.first + 1][curr.second])
+        if (curr.first < row - 1 && joe[curr.first + 1][curr.second] == 0 && (time < fire[curr.first + 1][curr.second] || !fire[curr.first + 1][curr.second]))
         {
-            joe[curr.first + 1][curr.second] = time + 1;
+            joe[curr.first + 1][curr.second] = time;
             joeRoute.push(make_pair(curr.first + 1, curr.second));
         }
-        if (curr.second > 0 && joe[curr.first][curr.second - 1] == 0 && time < fire[curr.first][curr.second - 1])
+        if (curr.second > 0 && joe[curr.first][curr.second - 1] == 0 && (time < fire[curr.first][curr.second - 1] || !fire[curr.first][curr.second - 1]))
         {
-            joe[curr.first][curr.second - 1] = time + 1;
+            joe[curr.first][curr.second - 1] = time;
             joeRoute.push(make_pair(curr.first, curr.second - 1));
         }
-        if (curr.second < col - 1 && joe[curr.first][curr.second + 1] == 0 && time < fire[curr.first][curr.second + 1])
+        if (curr.second < col - 1 && joe[curr.first][curr.second + 1] == 0 && (time < fire[curr.first][curr.second + 1] || !fire[curr.first][curr.second + 1]))
         {
-            joe[curr.first][curr.second + 1] = time + 1;
+            joe[curr.first][curr.second + 1] = time;
             joeRoute.push(make_pair(curr.first, curr.second + 1));
         }
         joeRoute.pop();
