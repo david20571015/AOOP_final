@@ -20,6 +20,9 @@ void MainWindow::on_run_clicked()
     building.run(ui->comboBox->currentIndex()+1);
     windata = building.getData();
 
+//    if(!windata.correct)
+//        qDebug()<<QString::fromStdString(windata.testdata.substr(0,10));
+
     ui->line_testdata1->setText(QString::fromStdString(windata.testdata));
     ui->line_submitdata1->setText(QString::fromStdString(windata.submit));
     ui->line_spendtime1->setText(QString::number(windata.spendtime));
