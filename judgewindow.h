@@ -31,14 +31,17 @@ public:
     void getInitial(int *,int *);
     int getDistance(){return distance;}
     void scheduleEnd();
+    void update(int,qint64,bool,bool);
     ~JudgeWindow();
     int arrive[27];
 private:
     int population;
     qint64 costtime;
+    qint64 totaltime[27];
+    int correct[27];
     int distance;
     int conditionNum;
-    QElapsedTimer timer;
+    QElapsedTimer timer; 
     InitialCondition condition[27];
     QLineEdit showline[27][4];
     int score;

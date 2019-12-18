@@ -7,5 +7,5 @@ Maze::Maze()
 
 string Maze::solve(const string &s)
 {
-
+    return s;
 }

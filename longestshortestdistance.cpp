@@ -7,5 +7,5 @@ LongestShortestDistance::LongestShortestDistance()
 
 string LongestShortestDistance::solve(const string &s)
 {
-
+return s;
 }

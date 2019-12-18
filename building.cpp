@@ -41,32 +41,42 @@ Building::Building()
 void Building::run(int n)
 {
     data.testdata = judgewindow.getData(n, 1);
-    data.submit = floor[n]->p->solve(data.testdata);
+    data.submit = floor[n-1]->p->solve(data.testdata);
     data.correct = judgewindow.submitData(data.submit);
     data.spendtime = judgewindow.getSpendTime();
-//    data.score = judge.getScore();
-    data.distance = judgewindow.getDistance();
 }
 
 void Building::startSimulation()
 {
     simu_timer->start(100);
     simu_timer->setSingleShot(1);
+    data.elevatorpeople=0;
+    data.distance=0;
+    scheduler.setInitial(dest,people);
+    scheduler.calRoute();
 }
 
 void Building::update()
 {
     simu_timer->start(100);
-    data.nowfloor=scheduler.getNowFloor();
+    data.elevatorpeople+=(scheduler.getNowFloor().second*2-1);
+    data.distance+=abs(data.nowfloor-scheduler.getNowFloor().first);
+    data.nowfloor=scheduler.getNowFloor().first;
+
     if(data.nowfloor)
+    {
         run(data.nowfloor);
+        judgewindow.update(data.nowfloor,data.spendtime,data.correct,scheduler.getNowFloor().second);
+        scheduler.nextFloor();
+    }
     else
         simu_timer->stop();
+
     emit this->updateGUI();
 }
 
 Building::~Building()
 {
-    for (int i = 0; i < 30; i++)
+    for (int i = 0; i < 27; i++)
         delete floor[i];
 }

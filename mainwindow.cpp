@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_run_clicked()
 {
     Data windata;
-    building.run(ui->comboBox->currentIndex());
+    building.run(ui->comboBox->currentIndex()+1);
     windata = building.getData();
 
     ui->line_testdata1->setText(QString::fromStdString(windata.testdata));
@@ -43,7 +43,7 @@ void MainWindow::slot_update_data()
         ui->line_spendtime1->setText(QString::number(windata.spendtime));
         ui->line_corr1->setText(QString::number(static_cast<int>(windata.correct)));
         ui->line_score->setText(QString::number(windata.score));
-        ui->comboBox->setCurrentIndex(windata.nowfloor);
+        ui->comboBox->setCurrentIndex(windata.nowfloor-1);
         ui->LCD_noweleavator->display(windata.nowfloor);
         ui->LCD_people->display(windata.elevatorpeople);
         ui->LCD_distance->display(windata.distance);

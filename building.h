@@ -39,7 +39,7 @@ private:
 //    Judge judge;
     JudgeWindow judgewindow;
     Data data;
-    Floor *floor[30];
+    Floor *floor[27];
 };
 
 #endif // BUILDING_H

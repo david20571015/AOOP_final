@@ -13,7 +13,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("l0963577306");
+    database.setPassword("1234567");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
@@ -37,7 +37,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     {
         query.next();
         condition[i].setCondition(query.value(0).toString().toStdString(), query.value(1).toInt(), query.value(2).toInt(), query.value(3).toInt());
-        arrive[condition[i].Dest]+=condition[i].Number;
+        arrive[condition[i].Dest-1]+=condition[i].Number;
     }
 
     query.exec("drop table if exists TestData");
@@ -66,27 +66,9 @@ string JudgeWindow::getData(int floor,int b)
 {
 
     string st;
-    distance += abs(condition[floor].Dest - floor);
-    if(b)
-    {
-        if(condition[floor].Number + population <= 10)
-        {
-            population += condition[floor].Number;
-            condition[floor].Number = 0;
-        }
-        else
-        {
-            condition[floor].Number -= 10 - population;
-            population = 10;
-        }
-    }
-    else
-    {
-
-    }
     this->floor=floor;
     query.exec("use Course8");
-    st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor + 1) + ") as t2 order by rand() limit 1";
+    st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor) + ") as t2 order by rand() limit 1";
     query.exec(QString::fromStdString(st));
     query.next();
     answer = query.value(3).toString().toStdString();
@@ -117,6 +99,20 @@ bool JudgeWindow::submitData(string ans)
         return 1;
     }
     return 0;
+}
+
+void JudgeWindow::update(int floor, qint64 time, bool corr, bool inOrOut)
+{
+    int leave=showline[floor-1][0].text().toInt();
+    int arrive=showline[floor-1][1].text().toInt();
+    qint64 cost=showline[floor-1][2].text().toLongLong();
+
+    if(inOrOut)
+        showline[floor-1][0].setText(QString::number(leave-1));
+    else
+        showline[floor-1][1].setText(QString::number(arrive-1));
+
+    showline[floor-1][2].setText(QString::number(cost+time));
 }
 
 JudgeWindow::~JudgeWindow()

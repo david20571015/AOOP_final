@@ -2,13 +2,15 @@
 #define SCHEDULER_H
 
 #include<bits/stdc++.h>
+#include <QDebug>
 using namespace std;
 
 class Scheduler
 {
 public:
     Scheduler();
-    int getNowFloor();
+    pair<int,int> getNowFloor();
+    void nextFloor();
     void reset();
     void setInitial(int [27],int [27]);
     void calRoute();
@@ -21,7 +23,7 @@ private:
         int num;
     };
     vector<Group> up,down;
-    vector<int> nowFloor;
+    vector<pair<int,int>> nowFloor;
     int index;
 };
 

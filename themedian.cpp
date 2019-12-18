@@ -17,7 +17,7 @@ string TheMedian::solve(const string &s)
     ss.clear();
     query.exec("use Database3");
     query.exec("select * from TheMedian");
-    qDebug() << "test data:" << query.next();
+//    qDebug() << "test data:" << query.next();
     ss << s;
     ss >> t1;
     ss >> t2;
@@ -28,7 +28,7 @@ string TheMedian::solve(const string &s)
         st = "select round(avg(" + t3 + "), 4) from(select " + t3 + " from TheMedian as t1 where Id regexp '" + t4 + "$' order by " + t3 + " asc limit " + to_string((int)round((t2 - t1 - 1) / 2.) + t1 - 1) + ", " + to_string((int)(t2 - t1) % 2 + 1) + ") as t2";
     else
         st = "select round(avg(" + t3 + "), 4) from(select " + t3 + " from TheMedian as t1 where Id regexp '" + t4 + "$' order by " + t3 + " desc limit " + to_string((int)round((t2 - t1 - 1) / 2.) + t1 - 1) + ", " + to_string((int)(t2 - t1) % 2 + 1) + ") as t2";
-    qDebug() << QString::fromStdString(st);
+//    qDebug() << QString::fromStdString(st);
     query.exec(QString::fromStdString(st));
     if(!query.next())
         ans = "NULL";
