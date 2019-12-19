@@ -76,6 +76,7 @@ void Building::startSimulation()
     data.distance=0;
     scheduler.setInitial(dest,people);
     scheduler.calRoute();
+//    exportToDatabase();
 }
 
 void Building::update()
