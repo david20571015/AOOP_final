@@ -51,10 +51,21 @@ Building::Building()
 
 void Building::run(int n)
 {
-    data.testdata = judgewindow.getData(n, 1);
-    data.submit = floor[n-1]->p->solve(data.testdata);
+    int times;
+    data.testdata = judgewindow.getData(n, 1,times);
+    if(!data.testdata.compare("GIVEUP"))
+    {
+        data.submit = "";
+        data.spendtime = 0;
+    }
+    else
+    {
+        for(int i=0;i<times;i++)
+            data.submit = floor[n-1]->p->solve(data.testdata);
+        data.spendtime = judgewindow.getSpendTime();
+    }
+
     data.correct = judgewindow.submitData(data.submit);
-    data.spendtime = judgewindow.getSpendTime();
 }
 
 void Building::startSimulation()
@@ -81,7 +92,10 @@ void Building::update()
         scheduler.nextFloor();
     }
     else
+    {
         simu_timer->stop();
+        judgewindow.scheduleEnd();
+    }
 
     emit this->updateGUI();
 }
