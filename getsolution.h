@@ -9,6 +9,9 @@ public:
     GetSolution();
     string solve(const string &);
     virtual ~GetSolution(){}
+private:
+    double a[10][10];
+    double b[10];
 };
 
 #endif // GETSOLUTION_H

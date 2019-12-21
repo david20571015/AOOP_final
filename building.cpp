@@ -70,12 +70,12 @@ void Building::run(int n)
 
 void Building::startSimulation()
 {
-    simu_timer->start(100);
-    simu_timer->setSingleShot(1);
     data.elevatorpeople=0;
     data.distance=0;
     scheduler.setInitial(dest,people);
     scheduler.calRoute();
+    simu_timer->setSingleShot(1);
+    simu_timer->start(100);
 //    exportToDatabase();
 }
 
