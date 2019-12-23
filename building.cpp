@@ -56,16 +56,16 @@ void Building::run(int n)
     if(!data.testdata.compare("GIVEUP"))
     {
         data.submit = "";
+        data.correct=0;
         data.spendtime = 0;
     }
     else
     {
         for(int i=0;i<times;i++)
             data.submit = floor[n-1]->p->solve(data.testdata);
+        data.correct = judgewindow.submitData(data.submit);
         data.spendtime = judgewindow.getSpendTime();
     }
-
-    data.correct = judgewindow.submitData(data.submit);
 }
 
 void Building::startSimulation()

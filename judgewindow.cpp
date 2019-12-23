@@ -13,7 +13,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("nctuece");
+    database.setPassword("1234567");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
@@ -44,7 +44,6 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     query.exec("create table TestData(Id char(8)primary key, Floor int, Question text, answer text)");
     query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/testdata.csv' INTO TABLE TestData FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
 
-    //-----------getData-----------
     score=0;
     distance=0;
     ui->setupUi(this);
@@ -65,7 +64,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
 
     for(int i=0;i<27;i++)
         giveup[i].setDisabled(1);
-    for(int i=20;i<27;i++)
+    for(int i=21;i<27;i++)
         giveup[i].setChecked(1);
     for(int i=0;i<27;i++)
         floordatatimes[i]=10;
@@ -83,7 +82,11 @@ string JudgeWindow::getData(int floor,int b,int &datatimes)
     string st;
     this->floor=floor;
     query.exec("use Course8");
-    st = "select * from (select * from testdata as t1 where Floor = " + to_string(floor) + " ) as t2 where id regexp '" + to_string(floornextdata[floor - 1]++) + "$' limit 1";
+//    query.exec("select * from TestData");
+//    query.next();
+//    qDebug() << query.value(0);
+
+    st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor) + " ) as t2 where id regexp '" + to_string(floornextdata[floor - 1]++) + "$' limit 1";
     query.exec(QString::fromStdString(st));
     query.next();
     answer = query.value(3).toString().toStdString();
