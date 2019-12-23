@@ -10,13 +10,14 @@ FibonacciOfFibonacci::FibonacciOfFibonacci()
 
 string FibonacciOfFibonacci::solve(const string &s)
 {
-    vector<int> n = stringtoVectorInt(s);
-    string ans;
-    for (int i = 0; i < static_cast<int>(n.size()); i++)
-        ans += to_string(digit[fib(n[i]) % 60]) + ' ';
+    return s;
+//    vector<int> n = stringtoVectorInt(s);
+//    string ans;
+//    for (int i = 0; i < static_cast<int>(n.size()); i++)
+//        ans += to_string(digit[fib(n[i]) % 60]) + ' ';
 
-    ans.erase(ans.end() - 1);
-    return ans;
+//    ans.erase(ans.end() - 1);
+//    return ans;
 }
 
 long long int FibonacciOfFibonacci::fib(int n)

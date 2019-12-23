@@ -5,6 +5,9 @@
 
 class MarioOjisan : public MyMath
 {
+    stringstream ss;
+    int n, result, pre_sum, max;
+    int *coin = new int[100000000];
 public:
     MarioOjisan();
     string solve(const string &);

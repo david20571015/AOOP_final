@@ -36,37 +36,94 @@ Building::Building()
     floor[24] = new Floor(new P25);
     floor[25] = new Floor(new P26);
     floor[26] = new Floor(new P27);
+    for(int i = 0; i < 27; i++)
+    {
+        upload[i].Id1 = "0710754";
+        upload[i].Id2 = "0710734";
+        upload[i].name1 = "梁育騰";
+        upload[i].name2 = "邱俊耀";
+        upload[i].pass = 0;
+        upload[i].totalques = 0;
+        upload[i].totalscore = 0;
+        upload[i].timespent = 0;
+    }
 }
 
 void Building::run(int n)
 {
-    data.testdata = judgewindow.getData(n, 1);
-    data.submit = floor[n]->p->solve(data.testdata);
+    int times;
+    data.testdata = judgewindow.getData(n, 1,times);
+    if(!data.testdata.compare("GIVEUP"))
+    {
+        data.submit = "";
+        data.spendtime = 0;
+    }
+    else
+    {
+        for(int i=0;i<times;i++)
+            data.submit = floor[n-1]->p->solve(data.testdata);
+        data.spendtime = judgewindow.getSpendTime();
+    }
+
     data.correct = judgewindow.submitData(data.submit);
-    data.spendtime = judgewindow.getSpendTime();
-//    data.score = judge.getScore();
-    data.distance = judgewindow.getDistance();
 }
 
 void Building::startSimulation()
 {
-    simu_timer->start(100);
+    data.elevatorpeople=0;
+    data.distance=0;
+    scheduler.setInitial(dest,people);
+    scheduler.calRoute();
     simu_timer->setSingleShot(1);
+    simu_timer->start(100);
+//    exportToDatabase();
 }
 
 void Building::update()
 {
     simu_timer->start(100);
-    data.nowfloor=scheduler.getNowFloor();
+    data.elevatorpeople+=(scheduler.getNowFloor().second*2-1);
+    data.distance+=abs(data.nowfloor-scheduler.getNowFloor().first);
+    data.nowfloor=scheduler.getNowFloor().first;
+
     if(data.nowfloor)
+    {
         run(data.nowfloor);
+        judgewindow.update(data.nowfloor,data.spendtime,data.correct,scheduler.getNowFloor().second);
+        scheduler.nextFloor();
+    }
     else
+    {
         simu_timer->stop();
+        judgewindow.scheduleEnd();
+    }
+
     emit this->updateGUI();
+}
+
+void Building::exportToDatabase()
+{
+    QSqlDatabase database1;
+    string st;
+    database1 = QSqlDatabase::addDatabase("aoopstudentuse");
+    database1.setHostName("localhost");
+    database1.setUserName("aoopstudent");
+    database1.setPassword("tsaimother");
+    database1.setPort(3306);
+    qDebug() << "QQ";
+    qDebug() << database1.open();
+    QSqlQuery query1;
+    query1.exec("use aoopstudentuse");
+    for(int i = 0; i < 27; i++)
+    {
+        st = "insert into floorscore values('0710754', '梁育騰', '0710734', '邱俊耀', '" + to_string(i + 1);
+        st += "', '0', '0', '0','0' )";
+        query1.exec(QString::fromStdString(st));
+    }
 }
 
 Building::~Building()
 {
-    for (int i = 0; i < 30; i++)
+    for (int i = 0; i < 27; i++)
         delete floor[i];
 }

@@ -7,6 +7,7 @@
 #include <QElapsedTimer>
 #include <QElapsedTimer>
 #include <QLineEdit>
+#include<QCheckBox>
 #include <QDebug>
 
 #include <bits/stdc++.h>
@@ -23,7 +24,7 @@ class JudgeWindow : public QWidget
     QSqlQuery query;
 public:
     explicit JudgeWindow(QWidget *parent = nullptr);
-    string getData(int floor,int b);
+    string getData(int floor,int b,int &datatimes);
     bool submitData(string ans);
     void setSeed(int seed){srand(static_cast<unsigned int>(seed));}
     qint64 getSpendTime(){return costtime;}
@@ -31,22 +32,29 @@ public:
     void getInitial(int *,int *);
     int getDistance(){return distance;}
     void scheduleEnd();
+    void update(int,qint64,bool,bool);
     ~JudgeWindow();
     int arrive[27];
+
 private:
+    QCheckBox giveup[27];
     int population;
     qint64 costtime;
+    qint64 totaltime[27];
+    int correct[27];
     int distance;
     int conditionNum;
-    QElapsedTimer timer;
+    QElapsedTimer timer; 
     InitialCondition condition[27];
     QLineEdit showline[27][4];
-    int score;
+    long long score;
     int floor;
     int numOfCorr;
     int numOfQues;
     fstream time;
     string answer;
+    int floordatatimes[27];
+    int floornextdata[27];
     Ui::JudgeWindow *ui;
 };
 

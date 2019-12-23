@@ -18,7 +18,7 @@ string TheEasyCity1::solve(const string &s)
     query.exec("use Database1");
     query.exec("select * from TheEasyCity1");
 
-    qDebug() << "get data: " <<query.next();
+//    qDebug() << "get data: " <<query.next();
     ss >> t1;
     ss >> t2;
     ss >> t3;

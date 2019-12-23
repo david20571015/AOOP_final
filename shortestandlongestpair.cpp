@@ -6,25 +6,26 @@ ShortestAndLongestPair::ShortestAndLongestPair()
 
 string ShortestAndLongestPair::solve(const string &s)
 {
-    string ans;
-    vector<int> house = stringtoVectorInt(s);
+    return s;
+//    string ans;
+//    vector<int> house = stringtoVectorInt(s);
 
-    for (int i = 0; i < static_cast<int>(house.size()) ; i += house[i] * 4 + 1)
-    {
-        stringstream ss;
-        string tmp;
-        vector<pair<int, int>> p;
+//    for (int i = 0; i < static_cast<int>(house.size()) ; i += house[i] * 4 + 1)
+//    {
+//        stringstream ss;
+//        string tmp;
+//        vector<pair<int, int>> p;
 
-        for (int j = 0; j < house[i] * 2; j++)
-            p.push_back(make_pair(house[i + j * 2 + 1], house[i + j * 2 + 2]));
-        this->point = p;
-        ss << fixed << setprecision(2) << shortestDistance(p);
-        ss >> tmp;
-        ans += tmp + ' ';
-    }
+//        for (int j = 0; j < house[i] * 2; j++)
+//            p.push_back(make_pair(house[i + j * 2 + 1], house[i + j * 2 + 2]));
+//        this->point = p;
+//        ss << fixed << setprecision(2) << shortestDistance(p);
+//        ss >> tmp;
+//        ans += tmp + ' ';
+//    }
 
-    ans.erase(ans.end() - 1);
-    return ans;
+//    ans.erase(ans.end() - 1);
+//    return ans;
 }
 
 double ShortestAndLongestPair::shortestDistance(vector<pair<int, int>> &p)
