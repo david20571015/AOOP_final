@@ -30,6 +30,10 @@ string ManhattanDistance::solve(const string &s)
     if(query.value(0).toString().toInt() < 2)
         ans = "NULL";
     else
-        ans = query.value(1).toString().toStdString();
+    {
+        ss.clear();
+        ss << fixed << setprecision(4) << query.value(1).toDouble();
+        ss >> ans;
+    }
     return ans;
 }

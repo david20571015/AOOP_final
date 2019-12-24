@@ -50,7 +50,19 @@ string TheEasyCity1::solve(const string &s)
     query.exec(QString::fromStdString(st));
 
     query.next();
-    ans += query.value(0).toString().toStdString() + " " + query.value(1).toString().toStdString() + " " + query.value(2).toString().toStdString();
+
+
+    ss.clear();
+    ss << fixed << setprecision(stoi(t7)) << query.value(0).toDouble();
+    ss >> t1;
+    ans += t1 + " ";
+
+    ss.clear();
+    ss << fixed << setprecision(stoi(t7)) << query.value(1).toDouble();
+    ss >> t1;
+    ans += t1 + " ";
+
+    ans += query.value(2).toString().toStdString();
 
     return ans;
 }
