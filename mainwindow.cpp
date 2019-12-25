@@ -23,8 +23,6 @@ void MainWindow::on_run_clicked()
 
 //    if(!windata.correct)
 //        qDebug()<<QString::fromStdString(windata.testdata.substr(0,10));
-    if(!windata.correct)
-        qDebug()<<QString::fromStdString(windata.testdata.substr(0,10));
 
     ui->line_testdata1->setText(QString::fromStdString(windata.testdata));
     ui->line_submitdata1->setText(QString::fromStdString(windata.submit));

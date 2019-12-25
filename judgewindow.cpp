@@ -8,12 +8,14 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     string st;
     distance = 0;
     population = 0;
+
     ui->setupUi(this);
+
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("l0963577306");
+    database.setPassword("1234567");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
@@ -84,11 +86,21 @@ string JudgeWindow::getData(int floor,int b,int &datatimes)
 //    query.exec("select * from TestData");
 //    query.next();
 //    qDebug() << query.value(0);
-
     st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor) + " ) as t2 where id regexp '" + to_string(floornextdata[floor - 1]++) + "$' limit 1";
+//    floornextdata[floor-1]%=6;
     query.exec(QString::fromStdString(st));
-    query.next();
-    answer = query.value(3).toString().toStdString();
+    int tflag = query.next();
+    qDebug() << tflag;
+    if(tflag)
+        answer = query.value(3).toString().toStdString();
+    else
+    {
+        floornextdata[floor-1] %= (floornextdata[floor - 1]);
+        st = "select * from (select * from TestData as t1 where Floor = " + to_string(floor) + " ) as t2 where id regexp '" + to_string(floornextdata[floor - 1]++) + "$' limit 1";
+        query.exec(QString::fromStdString(st));
+        query.next();
+        answer = query.value(3).toString().toStdString();
+    }
     timer.start();
     return query.value(2).toString().toStdString();
 }
@@ -113,7 +125,7 @@ bool JudgeWindow::submitData(string ans)
     costtime/=floordatatimes[floor-1];
     if(!ans.compare(answer))
     {
-        score=1000000000+static_cast<int>(pow(2,floor-1));
+        score=1000000000+static_cast<int>(pow(2,floornextdata[floor-1]-1));
         return 1;
     }
     score=0;
