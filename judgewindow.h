@@ -33,6 +33,7 @@ public:
     int getDistance(){return distance;}
     void scheduleEnd();
     void update(int,qint64,bool,bool);
+    void uploadToDB();
     ~JudgeWindow();
     int arrive[27];
 
@@ -56,6 +57,13 @@ private:
     int floordatatimes[27];
     int floornextdata[27];
     Ui::JudgeWindow *ui;
+
+    struct Upload
+    {
+        string Id1, Id2;
+        string name1, name2;
+        int pass, totalques, totalscore, timespent;
+    }upload[27];
 };
 
 #endif // JUDGEWINDOW_H

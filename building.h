@@ -14,13 +14,6 @@
 
 using namespace std;
 
-struct Upload
-{
-    string Id1, Id2;
-    string name1, name2;
-    int pass, totalques, totalscore, timespent;
-};
-
 class Building:public QObject
 {
     Q_OBJECT
@@ -48,7 +41,6 @@ private:
     JudgeWindow judgewindow;
     Data data;
     Floor *floor[27];
-    Upload upload[27];
 };
 
 #endif // BUILDING_H

@@ -71,6 +71,14 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
         floordatatimes[i]=10;
     for(int i=0;i<27;i++)
         floornextdata[i]=0;
+
+    for(int i = 0; i < 27; i++)
+    {
+        upload[i].pass = 0;
+        upload[i].totalques = condition[i].Number+arrive[i];
+        upload[i].totalscore = 0;
+        upload[i].timespent = 0;
+    }
 }
 
 string JudgeWindow::getData(int floor,int b,int &datatimes)
@@ -125,7 +133,10 @@ bool JudgeWindow::submitData(string ans)
     costtime/=floordatatimes[floor-1];
     if(!ans.compare(answer))
     {
+        upload[floor-1].pass++;
         score=1000000000+static_cast<int>(pow(2,floornextdata[floor-1]-1));
+        upload[floor-1].totalscore+=score;
+        upload[floor-1].timespent+=costtime;
         return 1;
     }
     score=0;
@@ -146,6 +157,11 @@ void JudgeWindow::update(int floor, qint64 time, bool corr, bool inOrOut)
 
     showline[floor-1][2].setText(QString::number(cost+time));
     showline[floor-1][3].setText((QString::number(nowScroe+score)));
+}
+
+void JudgeWindow::uploadToDB()
+{
+
 }
 
 JudgeWindow::~JudgeWindow()

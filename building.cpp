@@ -36,17 +36,6 @@ Building::Building()
     floor[24] = new Floor(new P25);
     floor[25] = new Floor(new P26);
     floor[26] = new Floor(new P27);
-    for(int i = 0; i < 27; i++)
-    {
-        upload[i].Id1 = "0710754";
-        upload[i].Id2 = "0710734";
-        upload[i].name1 = "梁育騰";
-        upload[i].name2 = "邱俊耀";
-        upload[i].pass = 0;
-        upload[i].totalques = 0;
-        upload[i].totalscore = 0;
-        upload[i].timespent = 0;
-    }
 //    qDebug() << "QQ";
 //    QSqlDatabase database1;
 //    string st;
