@@ -11,7 +11,7 @@ string Maze::solve(const string &s)
     int row, col;
     ss >> row >> col;
 
-    vector<vector<char>> maze(col, vector<char>(row));
+    char maze[100][100];
 
     char tmp;
     pair<int, int> start, end;
@@ -28,7 +28,8 @@ string Maze::solve(const string &s)
                 maze[i][j] = '0';
             }
         }
-    vector<vector<char>> route(maze);
+    char route[100][100];
+    memcpy(route,maze,sizeof(maze));
 
     pair<int, int>
         curr(start);

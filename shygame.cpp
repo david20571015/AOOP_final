@@ -30,7 +30,10 @@ string ShyGame::solve(const string &input)
             for (s = 1; s < M;)
             {
                 if (st[s << 1] < m)
-                    m -= st[s << 1], s = s << 1 | 1;
+                {
+                    m -= st[s << 1];
+                    s = s << 1 | 1;
+                }
                 else
                     s = s << 1;
             }

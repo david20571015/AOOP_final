@@ -6,7 +6,6 @@ Minesweeper::Minesweeper()
 
 string Minesweeper::solve(const string &s)
 {
-    return s;
 //    stringstream ss;
 //    ss << s;
 //    int col, row;
