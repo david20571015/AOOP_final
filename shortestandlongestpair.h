@@ -3,22 +3,21 @@
 
 #include "mymath.h"
 
+struct Point{
+    double x,y,z;
+};
+
 class ShortestAndLongestPair : public MyMath
 {
 public:
     ShortestAndLongestPair();
     string solve(const string &);
-    double distance(const pair<int, int> &p1, const pair<int, int> &p2)
+    double sqrtOfDis(const Point &p1,const Point &p2)
     {
-        return sqrt((p1.first - p2.first) * (p1.first - p2.first)
-                    + (p1.second - p2.second) * (p1.second - p2.second));
+        return (p1.x-p2.x)*(p1.x-p2.x)+ (p1.y-p2.y)*(p1.y-p2.y)+ (p1.z-p2.z)*(p1.z-p2.z);
     }
-    double shortestDistance(vector<pair<int, int>> &);
 private:
-    vector<pair<int, int>> point;
-    double dist;
-    bool label[20];
-    int count;
+
 };
 
 #endif // SHORTESTSUMMATION_H
