@@ -9,6 +9,7 @@ public:
     MyString();
     virtual ~MyString();
     string solve(const string &) = 0;
+    inline void preProcess(string &);
 };
 
 #endif // MYSTRING_H
