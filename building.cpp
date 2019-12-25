@@ -120,7 +120,7 @@ void Building::exportToDatabase()
     database1 = QSqlDatabase::addDatabase("aoopstudentuse");
     database1.setHostName("localhost");
     database1.setUserName("aoopstudent");
-    database1.setPassword("1234567");
+    database1.setPassword("tsaimother");
     database1.setPort(3306);
 //    qDebug() << "QQ";
 //    qDebug() << database1.open();
