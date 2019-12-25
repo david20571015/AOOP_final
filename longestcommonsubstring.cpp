@@ -26,7 +26,7 @@ string LongestCommonSubstring::solve(const string &s)
                 else
                     len[i][j] = len[i - 1][j - 1] + 1;
 
-                if (len[i][j] >= z)
+                if ((len[i][j] > z) || (len[i][j] == z && str[0].substr(i - z + 1, z) < ans))
                 {
                     z = len[i][j];
                     ans = str[0].substr(i - z + 1, z);

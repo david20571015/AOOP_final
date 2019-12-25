@@ -62,8 +62,6 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
         showline[i][3].setText(QString::number(0));
      }
 
-    for(int i=0;i<27;i++)
-        giveup[i].setDisabled(1);
     for(int i=21;i<27;i++)
         giveup[i].setChecked(1);
     for(int i=0;i<27;i++)

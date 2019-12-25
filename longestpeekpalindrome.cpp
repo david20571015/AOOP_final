@@ -7,18 +7,12 @@ LongestPeekPalindrome::LongestPeekPalindrome()
 
 string LongestPeekPalindrome::solve(const string &s)
 {
-    string tmp = s;
-    int len = s.size();
-    if (len == 1)
+    if (s.size() == 1)
         return s;
-    for (int i = 0; i < len; i++)
-        if (ispunct(tmp[i]))
-        {
-            tmp.erase(i--, 1);
-            len--;
-        }
 
-    transform(tmp.begin(), tmp.end(), tmp.begin(), ::toupper);
+    string tmp(preProcess(s));
+    int len=tmp.size();
+
 
     string str = "^";
     for (int i = 0; i < len; i++)
