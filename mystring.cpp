@@ -8,9 +8,12 @@ MyString::~MyString()
 {
 }
 
-void MyString::preProcess(string &s)
+string preProcess(const string &s)
 {
+    string tmp = s;
     int punct_pos;
-    while ((punct_pos = s.find_first_of(",.?!")) != string::npos)
-        s.erase(s.begin() + punct_pos);
+    while ((punct_pos = tmp.find_first_of(",.?!")) != string::npos)
+        tmp.erase(tmp.begin() + punct_pos);
+    transform(tmp.begin(), tmp.end(), tmp.begin(), ::toupper);
+    return tmp;
 }
