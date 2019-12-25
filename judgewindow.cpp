@@ -13,7 +13,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("1234567");
+    database.setPassword("l0963577306");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
@@ -61,9 +61,10 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
         showline[i][2].setText(QString::number(0));
         showline[i][3].setText(QString::number(0));
      }
-
-    for(int i=21;i<27;i++)
-        giveup[i].setChecked(1);
+    //----------giveup----------
+//    for(int i=21;i<27;i++)
+//        giveup[i].setChecked(1);
+    //----------giveup----------
     for(int i=0;i<27;i++)
         floordatatimes[i]=10;
     for(int i=0;i<27;i++)
