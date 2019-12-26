@@ -15,7 +15,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("l0963577306");
+    database.setPassword("1234567");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
@@ -86,7 +86,10 @@ string JudgeWindow::getData(int floor,int b,int &datatimes)
     datatimes=floordatatimes[floor-1];
 
     if(giveup[floor-1].isChecked())
+    {
+        answer="";
         return "GIVEUP";
+    }
 
     string st;
     this->floor=floor;
@@ -98,7 +101,7 @@ string JudgeWindow::getData(int floor,int b,int &datatimes)
 //    floornextdata[floor-1]%=6;
     query.exec(QString::fromStdString(st));
     int tflag = query.next();
-    qDebug() << tflag;
+//    qDebug() << tflag;
     if(tflag)
         answer = query.value(3).toString().toStdString();
     else

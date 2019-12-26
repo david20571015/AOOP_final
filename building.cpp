@@ -8,6 +8,8 @@ Building::Building()
     simu_timer = new QTimer();
     connect(simu_timer,SIGNAL(timeout()),this,SLOT(update()));
     judgewindow.getInitial(dest,people);
+    data.distance=0;
+    data.elevatorpeople=0;
 
     floor[0]  = new Floor(new P1);
     floor[1]  = new Floor(new P2);
@@ -82,10 +84,10 @@ void Building::run(int n)
 
 void Building::startSimulation()
 {
-    data.elevatorpeople=0;
-    data.distance=0;
     scheduler.setInitial(dest,people);
     scheduler.calRoute();
+    data.elevatorpeople=0;
+    data.distance=0;
     simu_timer->setSingleShot(1);
     simu_timer->start(100);
 //    exportToDatabase();
