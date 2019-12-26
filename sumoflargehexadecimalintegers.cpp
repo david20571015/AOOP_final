@@ -10,7 +10,7 @@ string SumOfLargeHexadecimalIntegers::solve(const string &s)
     string tmp;
     ss << s;
 
-    int n[30] = {0};
+    short n[100] = {0};
 
     while (ss >> tmp)
     {
@@ -20,14 +20,14 @@ string SumOfLargeHexadecimalIntegers::solve(const string &s)
             n[i] += transtoint(tmp[tmp.size() - i - 1]);
     }
 
-    for (int i = 0; i < 29; i++)
+    for (int i = 0; i < 99; i++)
     {
         n[i + 1] += n[i] / 16;
         n[i] %= 16;
     }
 
     int digit;
-    for (digit = 29; digit >= 0; digit--)
+    for (digit = 99; digit >= 0; digit--)
         if (n[digit] != 0)
             break;
 
@@ -38,14 +38,14 @@ string SumOfLargeHexadecimalIntegers::solve(const string &s)
     return ans;
 }
 
-int SumOfLargeHexadecimalIntegers::transtoint(char c)
+short SumOfLargeHexadecimalIntegers::transtoint(const char &c)
 {
     if (c >= '0' && c <= '9')
         return c - '0';
     return c - 'a' + 10;
 }
 
-char SumOfLargeHexadecimalIntegers::transtochar(int n)
+char SumOfLargeHexadecimalIntegers::transtochar(const short &n)
 {
     if (n >= 0 && n <= 9)
         return static_cast<char>(n + '0') ;

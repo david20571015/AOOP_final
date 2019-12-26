@@ -88,6 +88,7 @@ void Building::startSimulation()
     scheduler.calRoute();
     data.elevatorpeople=0;
     data.distance=0;
+    data.nowfloor=scheduler.getNowFloor().first;
     simu_timer->setSingleShot(1);
     simu_timer->start(100);
 //    exportToDatabase();

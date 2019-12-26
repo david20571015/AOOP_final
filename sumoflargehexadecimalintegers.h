@@ -8,8 +8,8 @@ class SumOfLargeHexadecimalIntegers : public MyMath
 public:
     SumOfLargeHexadecimalIntegers();
     string solve(const string &);
-    inline int transtoint(char);
-    inline char transtochar(int);
+    inline short transtoint(const char &);
+    inline char transtochar(const short &);
 };
 
 #endif // SUMOFLARGEHEX_H
