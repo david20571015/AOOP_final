@@ -30,6 +30,7 @@ string FindStructuresOfTrees::solve(const string &s)
     string pre,in;
     ss<<s;
     ss>>pre>>in;
+    ans="";
     for(int i=0;i<pre.size();i++)
     {
         inO[i]=in[i];
@@ -38,5 +39,5 @@ string FindStructuresOfTrees::solve(const string &s)
 
     printPostOrder(inO,preO,pre.size());
 
-    return ans;
+    return ans.substr(0,pre.size());
 }

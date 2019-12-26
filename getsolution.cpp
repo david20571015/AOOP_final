@@ -40,7 +40,7 @@ string GetSolution::solve(const string &s)
 
     for (int i = 0; i < n; i++)
     {
-        tmp = to_string(b[i]);
+        tmp = to_string(round(b[i]*100)/100);
         ans += (tmp.substr(0, tmp.find('.') + 3) + ' ');
     }
     ans.erase(ans.end() - 1);

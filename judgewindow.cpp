@@ -139,7 +139,7 @@ bool JudgeWindow::submitData(string ans)
         costtime/=floordatatimes[floor-1];
         upload[floor-1].timespent+=costtime;
         upload[floor-1].pass++;
-        score=10000000000+static_cast<int>(pow(2,floornextdata[floor-1]-1));
+        score=10000000000+static_cast<long long>(pow(2,floornextdata[floor-1]-1));
         upload[floor-1].totalscore+=score;
 
         return 1;

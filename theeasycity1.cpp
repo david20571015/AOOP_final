@@ -44,9 +44,9 @@ string TheEasyCity1::solve(const string &s)
     else
         st += "as t1 where Id regexp '[13579]$' order by length(City)";
     if (t6 == asc)
-        st += "asc limit 0, " + t4 + ")as t2";
+        st += "asc, City desc limit 0, " + t4 + ")as t2";
     else
-        st += "desc limit 0, " + t4 + ")as t2";
+        st += "desc, City desc limit 0, " + t4 + ")as t2";
     query.exec(QString::fromStdString(st));
 
     query.next();
