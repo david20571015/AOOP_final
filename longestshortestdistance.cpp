@@ -36,7 +36,7 @@ string LongestShortestDistance::solve(const string &s)
         st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
         st += "as t2 order by City, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as a join";
         st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
-        st += "as t2 order by City, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as b on a.Id != b.Id";
+        st += "as t2 order by City, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as b on ((a.col1 != b.col1 or a.col2 != b.col2) and a.City != b.City)";
     }
     else
     {
@@ -44,7 +44,7 @@ string LongestShortestDistance::solve(const string &s)
         st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
         st += "as t2 order by City desc, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as a join";
         st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
-        st += "as t2 order by City desc, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as b on a.Id != b.Id";
+        st += "as t2 order by City desc, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as b on ((a.col1 != b.col1 or a.col2 != b.col2) and a.City > b.City)";
     }
     query.exec(QString::fromStdString(st));
     query.next();
@@ -52,7 +52,7 @@ string LongestShortestDistance::solve(const string &s)
 
     if(query.value(0).toDouble() == 0)
     {
-        ans = "NULL";
+        ans = "NULL NULL";
     }
     else
     {
