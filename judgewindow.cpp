@@ -15,7 +15,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("1234567");
+    database.setPassword("nctuece");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
@@ -135,15 +135,18 @@ int JudgeWindow::getConditionNum()
 bool JudgeWindow::submitData(string ans)
 {
     costtime = timer.nsecsElapsed();
-    costtime/=floordatatimes[floor-1];
+
     if(!ans.compare(answer))
     {
+        costtime/=floordatatimes[floor-1];
+        upload[floor-1].timespent+=costtime;
         upload[floor-1].pass++;
         score=1000000000+static_cast<int>(pow(2,floornextdata[floor-1]-1));
         upload[floor-1].totalscore+=score;
-        upload[floor-1].timespent+=costtime;
+
         return 1;
     }
+    costtime=0;
     score=0;
     return 0;
 }
