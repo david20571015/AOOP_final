@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>531</height>
+    <width>832</width>
+    <height>482</height>
    </rect>
   </property>
   <property name="tabletTracking">
@@ -77,6 +77,9 @@
       <width>511</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -403,14 +406,14 @@
    <widget class="QPushButton" name="upload">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>200</y>
-      <width>411</width>
-      <height>301</height>
+      <x>510</x>
+      <y>280</y>
+      <width>211</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Upload Data</string>
     </property>
    </widget>
   </widget>
@@ -419,7 +422,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>832</width>
      <height>20</height>
     </rect>
    </property>

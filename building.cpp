@@ -95,9 +95,10 @@ void Building::startSimulation()
 
 void Building::update()
 {
-    simu_timer->start(100);
+    simu_timer->start(10);
     data.elevatorpeople+=(scheduler.getNowFloor().second*2-1);
     data.distance+=abs(data.nowfloor-scheduler.getNowFloor().first);
+    judgewindow.uploadistance=data.distance;
     data.nowfloor=scheduler.getNowFloor().first;
 
     if(data.nowfloor)

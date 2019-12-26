@@ -78,6 +78,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
         upload[i].totalscore = 0;
         upload[i].timespent = 0;
     }
+    uploadistance=0;
 }
 
 string JudgeWindow::getData(int floor,int b,int &datatimes)
@@ -138,7 +139,7 @@ bool JudgeWindow::submitData(string ans)
         costtime/=floordatatimes[floor-1];
         upload[floor-1].timespent+=costtime;
         upload[floor-1].pass++;
-        score=1000000000+static_cast<int>(pow(2,floornextdata[floor-1]-1));
+        score=10000000000+static_cast<int>(pow(2,floornextdata[floor-1]-1));
         upload[floor-1].totalscore+=score;
 
         return 1;
@@ -183,13 +184,12 @@ void JudgeWindow::uploadToDB()
 {
     QSqlDatabase database1;
     string st;
-    database1 = QSqlDatabase::addDatabase("aoopstudentuse");
-    database1.setHostName("140.113.146.120");
+    database1 = QSqlDatabase::addDatabase("QMYSQL");
+    database1.setHostName("140.113.146.126");
     database1.setUserName("aoopstudent");
     database1.setPassword("tsaimother");
     database1.setPort(3306);
-//    qDebug() << "QQ";
-//    qDebug() << database1.open();
+    database1.open();
     QSqlQuery query1;
     query1.exec("use aoopstudentuse");
     for(int i = 0; i < 27; i++)
@@ -198,4 +198,5 @@ void JudgeWindow::uploadToDB()
         st += "', '"+ to_string(upload[i].timespent) +"', '"+ to_string(upload[i].pass) +"', '"+ to_string(upload[i].totalques) +"','"+ to_string(upload[i].totalscore) +"' )";
         query1.exec(QString::fromStdString(st));
     }
+    query1.exec(QString::fromStdString("insert into totalpath values('0710734', '邱俊耀', '0710754', '梁育騰', '" + to_string(uploadistance) + "')"));
 }

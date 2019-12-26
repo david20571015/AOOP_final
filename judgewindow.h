@@ -36,6 +36,7 @@ public:
     void uploadToDB();
     ~JudgeWindow();
     int arrive[27];
+    int uploadistance;
 
 private:
     QCheckBox giveup[27];
