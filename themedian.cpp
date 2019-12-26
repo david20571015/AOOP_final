@@ -43,6 +43,7 @@ string TheMedian::solve(const string &s)
     {
         if (t3 == lat)
         {
+
             st = "select round(avg(lat), 4) from (select a.lat from (select * from TheMedian as t1 where Id regexp '" + t4 + "$' order by lat desc limit " + to_string(n1 - 1) + ", " + to_string(n2 - n1 + 1) + ")as a";
             st += " join ";
             st += "(select * from TheMedian as t1 where Id regexp '" + t4 + "$' order by lat desc limit " + to_string(n1 - 1) + ", " + to_string(n2 - n1 + 1) + ")as b ";
@@ -59,9 +60,14 @@ string TheMedian::solve(const string &s)
 
     query.exec(QString::fromStdString(st));
     query.next();
+    if(query.value(0).isNull())
+        ans = "NULL";
+    else
+    {
+        ss.clear();
+        ss << fixed << setprecision(4) << query.value(0).toDouble();
+        ss >> ans;
+    }
 
-    ss.clear();
-    ss << fixed << setprecision(4) << query.value(0).toDouble();
-    ss >> ans;
     return ans;
 }

@@ -67,8 +67,10 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
 //    for(int i=21;i<27;i++)
 //        giveup[i].setChecked(1);
     //----------giveup----------
-    for(int i=0;i<27;i++)
+    for(int i=0;i<21;i++)
         floordatatimes[i]=10;
+    for(int i=21;i<27;i++)
+        floordatatimes[i]=1;
     for(int i=0;i<27;i++)
         floornextdata[i]=0;
 
