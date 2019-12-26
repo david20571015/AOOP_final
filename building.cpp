@@ -69,8 +69,7 @@ void Building::run(int n)
     data.testdata = judgewindow.getData(n, 1,times);
     if(!data.testdata.compare("GIVEUP"))
     {
-        data.submit = "";
-        data.correct=0;
+        data.correct=judgewindow.submitData("GIVEUP");
         data.spendtime = 0;
     }
     else

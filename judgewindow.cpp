@@ -196,7 +196,6 @@ void JudgeWindow::uploadToDB()
     {
         st = "insert into floorscore values('0710754', '梁育騰', '0710734', '邱俊耀', '" + to_string(i + 1);
         st += "', '"+ to_string(upload[i].timespent) +"', '"+ to_string(upload[i].pass) +"', '"+ to_string(upload[i].totalques) +"','"+ to_string(upload[i].totalscore) +"' )";
-        qDebug()<<upload[i].timespent;
         query1.exec(QString::fromStdString(st));
     }
 }

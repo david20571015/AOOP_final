@@ -62,7 +62,8 @@ private:
     {
         string Id1, Id2;
         string name1, name2;
-        int pass, totalques, totalscore, timespent;
+        int pass, totalques;
+        long long totalscore, timespent;
     }upload[27];
 };
 
