@@ -116,27 +116,6 @@ void Building::update()
     emit this->updateGUI();
 }
 
-void Building::exportToDatabase()
-{
-    QSqlDatabase database1;
-    string st;
-    database1 = QSqlDatabase::addDatabase("aoopstudentuse");
-    database1.setHostName("localhost");
-    database1.setUserName("aoopstudent");
-    database1.setPassword("tsaimother");
-    database1.setPort(3306);
-//    qDebug() << "QQ";
-//    qDebug() << database1.open();
-    QSqlQuery query1;
-    query1.exec("use aoopstudentuse");
-    for(int i = 0; i < 27; i++)
-    {
-        st = "insert into floorscore values('0710754', '梁育騰', '0710734', '邱俊耀', '" + to_string(i + 1);
-        st += "', '0', '0', '0','0' )";
-        query1.exec(QString::fromStdString(st));
-    }
-}
-
 Building::~Building()
 {
     for (int i = 0; i < 27; i++)

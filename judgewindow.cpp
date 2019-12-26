@@ -6,9 +6,6 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     ui(new Ui::JudgeWindow)
 {
     string st;
-    distance = 0;
-    population = 0;
-
     ui->setupUi(this);
 
     QSqlDatabase database;
@@ -167,11 +164,6 @@ void JudgeWindow::update(int floor, qint64 time, bool corr, bool inOrOut)
     showline[floor-1][3].setText((QString::number(nowScroe+score)));
 }
 
-void JudgeWindow::uploadToDB()
-{
-
-}
-
 JudgeWindow::~JudgeWindow()
 {
     delete ui;
@@ -185,4 +177,26 @@ void JudgeWindow::scheduleEnd()
         time<<i<<','<<showline[i][2].text().toStdString()<<",0,0"<<endl;
 
     time.close();
+}
+
+void JudgeWindow::uploadToDB()
+{
+    QSqlDatabase database1;
+    string st;
+    database1 = QSqlDatabase::addDatabase("aoopstudentuse");
+    database1.setHostName("140.113.146.120");
+    database1.setUserName("aoopstudent");
+    database1.setPassword("tsaimother");
+    database1.setPort(3306);
+//    qDebug() << "QQ";
+//    qDebug() << database1.open();
+    QSqlQuery query1;
+    query1.exec("use aoopstudentuse");
+    for(int i = 0; i < 27; i++)
+    {
+        st = "insert into floorscore values('0710754', '梁育騰', '0710734', '邱俊耀', '" + to_string(i + 1);
+        st += "', '"+ to_string(upload[i].timespent) +"', '"+ to_string(upload[i].pass) +"', '"+ to_string(upload[i].totalques) +"','"+ to_string(upload[i].totalscore) +"' )";
+        qDebug()<<upload[i].timespent;
+        query1.exec(QString::fromStdString(st));
+    }
 }

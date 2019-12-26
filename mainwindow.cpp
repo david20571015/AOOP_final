@@ -55,3 +55,8 @@ void MainWindow::slot_update_data()
     else
         ui->finish->setVisible(1);
 }
+
+void MainWindow::on_upload_clicked()
+{
+    building.judgewindow.uploadToDB();
+}

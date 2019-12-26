@@ -26,6 +26,8 @@ private slots:
 
     void slot_update_data();
 
+    void on_upload_clicked();
+
 private:
     Building building;
     Ui::MainWindow *ui;
