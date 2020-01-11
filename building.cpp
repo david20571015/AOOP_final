@@ -7,7 +7,7 @@ Building::Building()
     int n=judgewindow.getConditionNum();
     simu_timer = new QTimer();
     connect(simu_timer,SIGNAL(timeout()),this,SLOT(update()));
-    judgewindow.getInitial(dest,people);
+    getInitial(dest,people);
     data.distance=0;
     data.elevatorpeople=0;
 
@@ -63,6 +63,44 @@ Building::Building()
 //      }
 }
 
+void Building::getInitial(int *d,int *p)
+{
+    QSqlDatabase database;
+    string st;
+    database = QSqlDatabase::addDatabase("QMYSQL");
+    database.setHostName("localhost");
+    database.setUserName("root");
+    database.setPassword("nctuece");
+    database.setPort(3306);
+    int t = database.open();
+    QSqlQuery query;
+    query = QSqlQuery(database);
+    query.exec("drop database if exists Course8");
+    query.exec("create database Course8");
+    query.exec("use Course8");
+    //----------getPeople----------
+    query.exec("drop table if exists PeopleList");
+    query.exec("create table PeopleList(Id char(8)primary key, Nowfloor int, Destination int, Number int)");
+    query.exec("LOAD DATA INFILE \
+                'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/initial_condition.csv' \
+                INTO TABLE PeopleList FIELDS TERMINATED BY ',' \
+                ENCLOSED BY '\"' LINES \
+                TERMINATED BY '\r\n' \
+                IGNORE 1 ROWS");
+
+    conditionNum = 1;
+    st = "select * from PeopleList where Id like '%0" + to_string(conditionNum) + "-%'";
+    query.exec(QString::fromStdString(st));
+
+    for (int i = 0; i < 27; i++)
+    {
+        query.next();
+        d[i] = query.value(2).toInt();
+        p[i] = query.value(3).toInt();
+        // condition[i].setCondition(query.value(0).toString().toStdString(), query.value(1).toInt(), query.value(2).toInt(), query.value(3).toInt());
+    }
+}
+
 void Building::run(int n)
 {
     int times;
@@ -98,7 +136,7 @@ void Building::update()
     simu_timer->start(10);
     data.elevatorpeople+=(scheduler.getNowFloor().second*2-1);
     data.distance+=abs(data.nowfloor-scheduler.getNowFloor().first);
-    judgewindow.uploadistance=data.distance;
+//    judgewindow.uploadistance=data.distance;
     data.nowfloor=scheduler.getNowFloor().first;
 
     if(data.nowfloor)

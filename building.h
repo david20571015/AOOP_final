@@ -24,6 +24,7 @@ public:
     Data getData() { return data; }
     void startSimulation();
     JudgeWindow judgewindow;
+    void getInitial(int *d,int *p);
     ~Building();
 
 public slots:
@@ -38,7 +39,7 @@ private:
     QTimer *simu_timer;
     Scheduler scheduler;
 //    Judge judge;
-
+    int conditionNum;
     Data data;
     Floor *floor[27];
 };
