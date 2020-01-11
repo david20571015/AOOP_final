@@ -58,5 +58,5 @@ void MainWindow::slot_update_data()
 
 void MainWindow::on_upload_clicked()
 {
-    building.judgewindow.uploadToDB();
+//    building.judgewindow.uploadToDB();
 }
