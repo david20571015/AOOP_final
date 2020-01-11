@@ -12,7 +12,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("nctuece");
+    database.setPassword("1234567s");
     database.setPort(3306);
     int t = database.open();
     query = QSqlQuery(database);
