@@ -102,7 +102,7 @@ void Scheduler::calRoute()
 
 //    qDebug()<<"calRoute end";
 //    for(auto i:nowFloor)
-//    qDebug()<<nowFloor[i];
+//    qDebug()<<i.first;
 }
 
 pair<int,int> Scheduler::getNowFloor()

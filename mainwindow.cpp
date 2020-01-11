@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_run_clicked()
 {
     Data windata;
-    building.run(ui->comboBox->currentIndex()+1);
+    building.run(ui->comboBox->currentIndex()+1,1);
     windata = building.getData();
 
 

@@ -70,7 +70,7 @@ void Building::getInitial(int *d,int *p)
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("nctuece");
+    database.setPassword("1234567");
     database.setPort(3306);
     int t = database.open();
     QSqlQuery query;
@@ -101,10 +101,11 @@ void Building::getInitial(int *d,int *p)
     }
 }
 
-void Building::run(int n)
+void Building::run(int nowFloor,int inout)
 {
     int times;
-    data.testdata = judgewindow.getData(n, 1,times);
+    data.testdata = judgewindow.getData(nowFloor-1, inout,times);
+    //qDebug()<<QString::fromStdString(data.testdata);
     if(!data.testdata.compare("GIVEUP"))
     {
         data.correct=judgewindow.submitData("GIVEUP");
@@ -113,10 +114,12 @@ void Building::run(int n)
     else
     {
         for(int i=0;i<times;i++)
-            data.submit = floor[n-1]->p->solve(data.testdata);
+            data.submit = floor[nowFloor-1]->p->solve(data.testdata);
         data.correct = judgewindow.submitData(data.submit);
         data.spendtime = judgewindow.getSpendTime();
     }
+    if(!data.correct&&data.testdata.compare("GIVEUP"))
+        qDebug()<<nowFloor<<' '<<QString::fromStdString(data.testdata.substr(0,10))<<' '<<QString::fromStdString(data.submit.substr(0,10));
 }
 
 void Building::startSimulation()
@@ -138,11 +141,12 @@ void Building::update()
     data.distance+=abs(data.nowfloor-scheduler.getNowFloor().first);
 //    judgewindow.uploadistance=data.distance;
     data.nowfloor=scheduler.getNowFloor().first;
+    int inOrOut=scheduler.getNowFloor().second;
 
     if(data.nowfloor)
     {
-        run(data.nowfloor);
-        judgewindow.update(data.nowfloor,data.spendtime,data.correct,scheduler.getNowFloor().second);
+        run(data.nowfloor,inOrOut);
+//        judgewindow.update(data.nowfloor,data.spendtime,data.correct,scheduler.getNowFloor().second);
         scheduler.nextFloor();
     }
     else

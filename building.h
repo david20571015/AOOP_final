@@ -1,7 +1,6 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 
-#include "judge.h"
 #include "judgewindow.h"
 #include "data.h"
 #include "floor.h"
@@ -20,7 +19,7 @@ class Building:public QObject
 
 public:
     Building();
-    void run(int n);
+    void run(int nowFloor,int inout);
     Data getData() { return data; }
     void startSimulation();
     JudgeWindow judgewindow;

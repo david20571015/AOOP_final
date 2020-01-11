@@ -7,7 +7,8 @@ LongestCommonSubstring::LongestCommonSubstring()
 
 string LongestCommonSubstring::solve(const string &s)
 {
-    string tmp = preProcess(s);
+    string tmp = s;
+    preProcess(tmp);
 
     int space_pos = tmp.find(" ");
     string str[2] = {tmp.substr(0, space_pos), tmp.substr(space_pos + 1)};

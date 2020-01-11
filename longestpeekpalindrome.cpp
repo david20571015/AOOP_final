@@ -10,7 +10,8 @@ string LongestPeekPalindrome::solve(const string &s)
     if (s.size() == 1)
         return s;
 
-    string tmp(preProcess(s));
+    string tmp=s;
+    preProcess(tmp);
     int len=tmp.size();
 
 

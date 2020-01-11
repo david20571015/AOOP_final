@@ -30,8 +30,6 @@ SOURCES += \
     getsignature.cpp \
     getsolution.cpp \
     initialcondition.cpp \
-    judge.cpp \
-    judgewindow.cpp \
     judgewindow.cpp \
     largefactorial.cpp \
     largestroot.cpp \
@@ -77,8 +75,6 @@ HEADERS += \
     getsignature.h \
     getsolution.h \
     initialcondition.h \
-    judge.h \
-    judgewindow.h \
     judgewindow.h \
     largefactorial.h \
     largestroot.h \
@@ -111,7 +107,6 @@ HEADERS += \
     themedian.h
 
 FORMS += \
-    judgewindow.ui \
     judgewindow.ui \
     mainwindow.ui
 
