@@ -5,6 +5,7 @@
 
 class SumOfLargeHexadecimalIntegers : public MyMath
 {
+    stringstream ss;
 public:
     SumOfLargeHexadecimalIntegers();
     string solve(const string &);

@@ -7,7 +7,7 @@ Subtract1::Subtract1()
 
 string Subtract1::solve(const string &s)
 {
-    stringstream ss;
+    ss.clear();
     ss<<s;
     int n;
     string ans;

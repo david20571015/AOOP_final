@@ -5,6 +5,7 @@
 
 class Maze : public MyOther
 {
+    stringstream ss;
 public:
     Maze();
     string solve(const string &);

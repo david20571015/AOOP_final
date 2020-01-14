@@ -10,7 +10,7 @@ EscapeIfYouWantToSurvive::~EscapeIfYouWantToSurvive()
 
 string EscapeIfYouWantToSurvive::solve(const string &s)
 {
-    stringstream ss;
+    ss.clear();
     ss << s;
     int row, col;
     ss >> row >> col;

@@ -6,12 +6,11 @@ LargestRoot::LargestRoot()
 
 string LargestRoot::solve(const string &s)
 {
-    stringstream ss;
-    ss << s;
+    ss.clear();
+    ss<<s;
     int c = 0;
-    double n;
-    while (ss >> n)
-        node[c++] = n;
+
+    while (ss >> node[c++]);
 
     value[7] = node[7];
     value[8] = node[8];
@@ -40,7 +39,6 @@ string LargestRoot::solve(const string &s)
     ss.clear();
     ss << fixed << setprecision(3) << value[maxn];
     ss >> ans;
-    ans = to_string(maxn+1) + ':' + ans;
 
-    return ans;
+    return to_string(maxn+1) + ':' + ans;
 }

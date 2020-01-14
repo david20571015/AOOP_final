@@ -44,11 +44,7 @@ string ShyGame::solve(const string &input)
                 s >>= 1;
             }
         }
-        t.clear();
-        t << last;
-        t >> ts;
-        ans += ts;
-        ans += " ";
+        ans += to_string(last) + ' ';
     }
     ans.erase(ans.end() - 1);
     return ans;

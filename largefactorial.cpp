@@ -6,9 +6,9 @@ LargeFactorial::LargeFactorial()
 
 string LargeFactorial::solve(const string &s)
 {
-    stringstream ss;
+    ss.clear();
+    ss<<s;
     short n;
-    ss << s;
     ss >> n;
 
     unsigned long long fac[2400] = {0};

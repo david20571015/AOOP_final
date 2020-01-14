@@ -9,7 +9,8 @@ public:
     LargestRoot();
     string solve(const string &);
 
-protected:
+private:
+    stringstream ss;
     double node[15];
     double value[15];
 };

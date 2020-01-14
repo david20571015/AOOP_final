@@ -10,6 +10,7 @@ public:
     string solve(const string &);
 
 private:
+    stringstream ss;
 };
 
 #endif // MINESWEEPER_H

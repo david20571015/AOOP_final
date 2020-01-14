@@ -5,6 +5,7 @@
 
 class Add1 : public MyMath
 {
+    stringstream ss;
 public:
     Add1();
     string solve(const string &);

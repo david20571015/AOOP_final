@@ -6,55 +6,48 @@ FindFactorial::FindFactorial()
 
 string FindFactorial::solve(const string &s)
 {
-    vector<double> n = stringtoVectorDouble(s);
+    ss.clear();
+    ss<<s;
     string ans;
-    for (int i = 0; i < static_cast<int>(n.size()); i++)
+    vector<int>v;
+    int n,count=2,i,index,j;
+    int prime[100];
+    prime[0]=2;
+    prime[1]=3;
+    for(i=5;i<=541;i+=2)
+        if(isPrime(i))
+            prime[count++]=i;
+
+    while(ss>>n)
+        v.push_back(n);
+
+    for(i=0;i<v.size();i++)
     {
-        for (long long int f = 1;; f++)
+        count=0;
+        index=2;
+        j=0;
+        while(count<v[i])
         {
-            if (numberOfPrime(f) == n[i])
+            n=index;
+            while(index!=1)
             {
-                ans += to_string(f) + "! ";
-                break;
+                if(index%prime[j]==0)
+                {
+                    index/=prime[j];
+                    count++;
+                }
+                else
+                    j++;
             }
-            else if (numberOfPrime(f) > n[i])
-            {
-                ans += "N ";
-                break;
-            }
+            index=n+1;
+            j=0;
+
         }
+        if(count==v[i])
+            ans+=to_string(index-1)+"! ";
+        else
+            ans+="N ";
     }
-    ans.erase(ans.end() - 1);
+    ans.erase(ans.end()-1);
     return ans;
-}
-
-int FindFactorial::numberOfPrime(long long int &n)
-{
-    int sum = 0;
-    for (int i = 2; i <= n; i++)
-    {
-        if (isPrime(i))
-        {
-            for (int r = 1; r <= n; r++)
-            {
-                sum += static_cast<int>(floor(n / pow(i, r)));
-                if (floor(n / pow(i, r)) == 0)
-                    break;
-            }
-        }
-    }
-    return sum;
-}
-
-bool FindFactorial::isPrime(const int &n)
-{
-    if (n == 1)
-        return 0;
-    if ((n == 2) || (n == 3))
-        return 1;
-    int s = static_cast<int>(sqrt(n) + 1);
-    for (int i = 2; i < s; i++)
-        if (n % i == 0)
-            return 0;
-    return 1;
 }

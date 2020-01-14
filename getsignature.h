@@ -5,6 +5,7 @@
 
 class GetSignature : public MyOther
 {
+    stringstream ss;
 public:
     GetSignature();
     string solve(const string &);

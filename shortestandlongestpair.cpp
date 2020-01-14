@@ -6,8 +6,7 @@ ShortestAndLongestPair::ShortestAndLongestPair()
 
 string ShortestAndLongestPair::solve(const string &s)
 {
-    stringstream ss;
-    ss<<s;
+    stringstream ss(s);
     double tmp1,tmp2,tmp3;
     vector<Point> points;
     while(ss>>tmp1>>tmp2>>tmp3)

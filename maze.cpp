@@ -7,7 +7,8 @@ Maze::Maze()
 
 string Maze::solve(const string &s)
 {
-    stringstream ss(s);
+    ss.clear();
+    ss<<s;
     int row, col;
     ss >> row >> col;
 
@@ -31,8 +32,7 @@ string Maze::solve(const string &s)
     char route[100][100];
     memcpy(route,maze,sizeof(maze));
 
-    pair<int, int>
-        curr(start);
+    pair<int, int> curr(start);
     stack<pair<int, int>> path;
     path.push(curr);
 

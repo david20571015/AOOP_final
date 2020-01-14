@@ -6,7 +6,7 @@
 class MarioOjisan : public MyMath
 {
     stringstream ss;
-    int n, result, pre_sum, max;
+    int n, result,maxn;
     int *coin = new int[100000000];
 public:
     MarioOjisan();

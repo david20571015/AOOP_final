@@ -5,6 +5,7 @@
 
 class LargeFactorial : public MyMath
 {
+    stringstream ss;
 public:
     LargeFactorial();
     string solve(const string &);

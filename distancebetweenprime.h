@@ -5,6 +5,7 @@
 
 class DistanceBetweenPrime : public MyMath
 {
+    stringstream ss;
 public:
     DistanceBetweenPrime();
     string solve(const string &);

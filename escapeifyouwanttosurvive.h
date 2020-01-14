@@ -5,6 +5,7 @@
 
 class EscapeIfYouWantToSurvive : public MyOther
 {
+    stringstream ss;
 public:
     EscapeIfYouWantToSurvive();
     virtual ~EscapeIfYouWantToSurvive();

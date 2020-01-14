@@ -14,10 +14,11 @@ string FindThePeriodOfString::solve(const string &s)
         string test = s.substr(0, i);
         bool flag = 1;
         for (int j = 0; j < static_cast<int>(s.size()); j += i)
-        {
             if (s.substr(j, i) != test)
+            {
                 flag = 0;
-        }
+                break;
+            }
         if (flag)
             return to_string(i);
     }

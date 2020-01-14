@@ -14,7 +14,7 @@ int FindStructuresOfTrees::search(char arr[],int x,int n)
     return -1;
 }
 
-void FindStructuresOfTrees::printPostOrder(char inOrder[],char preOrder[],int n)
+void FindStructuresOfTrees::printPostOrder(char inOrder[],char preOrder[],const int &n)
 {
     int rootNode=search(inOrder,preOrder[0],n);
     if(rootNode)
@@ -26,9 +26,9 @@ void FindStructuresOfTrees::printPostOrder(char inOrder[],char preOrder[],int n)
 
 string FindStructuresOfTrees::solve(const string &s)
 {
-    stringstream ss;
-    string pre,in;
+    ss.clear();
     ss<<s;
+    string pre,in;
     ss>>pre>>in;
     ans="";
     for(int i=0;i<pre.size();i++)

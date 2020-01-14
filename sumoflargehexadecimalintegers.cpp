@@ -6,9 +6,9 @@ SumOfLargeHexadecimalIntegers::SumOfLargeHexadecimalIntegers()
 
 string SumOfLargeHexadecimalIntegers::solve(const string &s)
 {
-    stringstream ss;
-    string tmp;
+    ss.clear();
     ss << s;
+    string tmp;
 
     short n[100] = {0};
 
@@ -16,7 +16,7 @@ string SumOfLargeHexadecimalIntegers::solve(const string &s)
     {
         if (tmp == "0")
             break;
-        for (int i = static_cast<int>(tmp.size() - 1) ; i >= 0; i--)
+        for (int i = static_cast<int>(tmp.size() - 1); i >= 0; i--)
             n[i] += transtoint(tmp[tmp.size() - i - 1]);
     }
 
@@ -27,9 +27,8 @@ string SumOfLargeHexadecimalIntegers::solve(const string &s)
     }
 
     int digit;
-    for (digit = 99; digit >= 0; digit--)
-        if (n[digit] != 0)
-            break;
+    for (digit = 99; digit >= 0 && n[digit] == 0; digit--)
+        ;
 
     string ans;
     for (; digit >= 0; digit--)

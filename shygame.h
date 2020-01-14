@@ -9,8 +9,7 @@ using namespace std;
 
 class ShyGame:public MyMath
 {
-    string ts;
-    stringstream ss, t;
+    stringstream ss;
     int n, p, st[100000], i, j, M;
 public:
     ShyGame();
