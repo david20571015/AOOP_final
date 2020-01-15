@@ -10,6 +10,7 @@ public:
     string solve(const string &);
     double shortestDistance(vector<pair<int, int>> &);
 private:
+    double dp[1<<20];
     vector<pair<int, int>> point;
 };
 

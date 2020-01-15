@@ -30,7 +30,7 @@ string ShortestSummationDistance::solve(const string &s)
 double ShortestSummationDistance::shortestDistance(vector<pair<int, int>> &p)
 {
     int n = static_cast<int>(p.size());
-    double *dp = new double[1 << 20];
+//    double *dp = new double[1 << 20];
     double dis[100][100];
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
@@ -54,7 +54,7 @@ double ShortestSummationDistance::shortestDistance(vector<pair<int, int>> &p)
                 dp[S] = min(dp[S], dis[i][j] + dp[S ^ (1 << i) ^ (1 << j)]);
     }
     double ans=dp[(1 << n) - 1];
-    delete []dp;
+//    delete []dp;
     return ans;
 }
 

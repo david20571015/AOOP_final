@@ -82,7 +82,10 @@ string Maze::solve(const string &s)
 
     for (int i = 0; i < col; i++)
         for (int j = 0; j < row; j++)
-            ans += route[i][j]+' ';
+        {
+            ans += route[i][j];
+            ans += ' ';
+        }
     ans.erase(ans.end() - 1);
 
     return ans;
