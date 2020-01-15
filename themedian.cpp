@@ -2,12 +2,7 @@
 
 TheMedian::TheMedian()
 {
-    query.exec("drop database if exists Database3");
-    query.exec("create database Database3");
-    query.exec("use Database3");
-    query.exec("drop table if exists TheMedian");
-    query.exec("create table TheMedian(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE TheMedian FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
+
 }
 
 string TheMedian::solve(const string &s)
@@ -15,6 +10,12 @@ string TheMedian::solve(const string &s)
     string ans, t3, t4, t5, lat = "lat", asc = "asc";
     int n1, n2;
     ss.clear();
+    query.exec("drop database if exists Database3");
+    query.exec("create database Database3");
+    query.exec("use Database3");
+    query.exec("drop table if exists TheMedian");
+    query.exec("create table TheMedian(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE TheMedian FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
     query.exec("use Database3");
     ss << s;
     ss >> n1;

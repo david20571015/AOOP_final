@@ -11,7 +11,7 @@ string SymmetricPairs::solve(const string &s)
     query.exec("use DataBase6");
     query.exec("drop table if exists CityList");
     query.exec("create table CityList(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE CityList FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE CityList FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
     string ans, st;
     ss.clear();
     ss << s;

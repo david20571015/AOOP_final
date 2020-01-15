@@ -15,7 +15,7 @@ string LongestShortestDistance::solve(const string &s)
     query.exec("USE CITYDATABASE;");
     query.exec("DROP TABLE IF EXISTS CITYTABLE;");
     query.exec("CREATE TABLE CITYTABLE(ID INT,COUNTRY VARCHAR(50),CITY VARCHAR(60),LAT DOUBLE,LON DOUBLE,PRIMARY KEY(ID));");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE CITYTABLE FIELDS ENCLOSED BY '\"' TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE CITYTABLE FIELDS ENCLOSED BY '\"' TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
 
     stringstream ss,so;
     int n,a,b;

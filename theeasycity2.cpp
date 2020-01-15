@@ -10,7 +10,7 @@ string TheEasyCity2::solve(const string &s)
     query.exec("use Course7");
     query.exec("drop table if exists TheEasyCity2");
     query.exec("create table TheEasyCity2(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE TheEasyCity2 FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE TheEasyCity2 FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
 
     string ans;
     ss.clear();

@@ -2,17 +2,19 @@
 
 ManhattanDistance::ManhattanDistance()
 {
-    query.exec("drop database if exists Database2");
-    query.exec("create database Database2");
-    query.exec("use Database2");
-    query.exec("drop table if exists ManhattanDistance");
-    query.exec("create table ManhattanDistance(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE ManhattanDistance FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
+
 }
 
 string ManhattanDistance::solve(const string &s)
 {
     string ans;
+    query.exec("drop database if exists Database2");
+    query.exec("create database Database2");
+    query.exec("use Database2");
+    query.exec("drop table if exists ManhattanDistance");
+    query.exec("create table ManhattanDistance(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE ManhattanDistance FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
+
     query.exec("use Database2");
     ss.clear();
     ss << s;

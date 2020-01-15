@@ -16,7 +16,7 @@ string TheEasyCity1::solve(const string &s)
     query.exec("use Database1");
     query.exec("drop table if exists TheEasyCity1");
     query.exec("create table TheEasyCity1(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE TheEasyCity1 FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE TheEasyCity1 FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
 
     query.exec("use Database1");
     query.exec("select * from TheEasyCity1");
