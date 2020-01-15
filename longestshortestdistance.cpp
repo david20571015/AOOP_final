@@ -2,27 +2,20 @@
 
 LongestShortestDistance::LongestShortestDistance()
 {
-    query.exec("drop database if exists Database5");
-    query.exec("create database Database5");
-    query.exec("use Database5");
-    query.exec("drop table if exists CityList");
-    query.exec("create table CityList(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE CityList FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
-    query.exec("select * from CityList");
 }
 
 string LongestShortestDistance::solve(const string &s)
 {
 //    QSqlQuery query(database);
 //    QSqlQuery query;
-//    cout<<"1"<<endl;
+
+
     query.exec("DROP DATABASE IF EXISTS CITYDATABASE;");
-//    cout<<"2"<<endl;
     query.exec("CREATE DATABASE CITYDATABASE;");
     query.exec("USE CITYDATABASE;");
     query.exec("DROP TABLE IF EXISTS CITYTABLE;");
     query.exec("CREATE TABLE CITYTABLE(ID INT,COUNTRY VARCHAR(50),CITY VARCHAR(60),LAT DOUBLE,LON DOUBLE,PRIMARY KEY(ID));");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE CITYTABLE FIELDS ENCLOSED BY '\"' TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE CITYTABLE FIELDS ENCLOSED BY '\"' TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
 
     stringstream ss,so;
     int n,a,b;
