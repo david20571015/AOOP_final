@@ -7,7 +7,7 @@ LargeFactorial::LargeFactorial()
 string LargeFactorial::solve(const string &s)
 {
     ss.clear();
-    ss<<s;
+    ss << s;
     short n;
     ss >> n;
 
@@ -27,7 +27,7 @@ string LargeFactorial::solve(const string &s)
     }
 
     int digit = 2399;
-    for (;!fac[digit]; digit--)
+    for (; !fac[digit]; digit--)
         ;
     stringstream tmp;
     string ans;
@@ -37,8 +37,8 @@ string LargeFactorial::solve(const string &s)
 
     tmp >> ans;
 
-    for (digit = 0; digit < ans.size() && ans[digit] == '0'; digit++)
-        ;
+    digit = ans.find_first_not_of('0');
+
     ans = ans.substr(digit, ans.size() - digit);
 
     return ans;

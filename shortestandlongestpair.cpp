@@ -6,26 +6,31 @@ ShortestAndLongestPair::ShortestAndLongestPair()
 
 string ShortestAndLongestPair::solve(const string &s)
 {
-    stringstream ss(s);
-    double tmp1,tmp2,tmp3;
-    vector<Point> points;
-    while(ss>>tmp1>>tmp2>>tmp3)
-        points.push_back({tmp1,tmp2,tmp3});
+    ss.clear();
+    ss << s;
 
-    double max_dis=DBL_MIN,min_dis=DBL_MAX;
-    for(int i=0; i<points.size()-1;++i)
-        for(int j=i+1;j<points.size();++j)
+    int count = 0;
+    while (ss >> x[count] >> y[count] >> z[count++])
+        ;
+
+    double max_dis = DBL_MIN, min_dis = DBL_MAX;
+    for (int i = 0; i < count - 2; ++i)
+        for (int j = i + 1; j < count - 1; ++j)
         {
-            max_dis=max(max_dis,sqrtOfDis(points[i],points[j]));
-            min_dis=min(min_dis,sqrtOfDis(points[i],points[j]));
+            dx = x[i] - x[j];
+            dy = y[i] - y[j];
+            dz = z[i] - z[j];
+            dis = dx * dx + dy * dy + dz * dz;
+            max_dis = max(max_dis, dis);
+            min_dis = min(min_dis, dis);
         }
 
-    string ans,tmp;
-    tmp=to_string(round(sqrt(min_dis)*100)/100);
-    ans += (tmp.substr(0, tmp.find('.') + 3) + ' ');
-    tmp=to_string(round(sqrt(max_dis)*100)/100);
-    ans+=tmp.substr(0, tmp.find('.') + 3);
+    max_dis = sqrt(max_dis);
+    min_dis = sqrt(min_dis);
 
-    return ans;
+    int tmp1 = int(round((min_dis - int(min_dis)) * 100));
+    int tmp2 = int(round((max_dis - int(max_dis)) * 100));
+
+    return to_string((int)min_dis) + "." + to_string(tmp1 / 10) + to_string(tmp1 % 10) + " " + to_string((int)max_dis) + "." + to_string(tmp2 / 10) + to_string(tmp2 % 10);
 }
 

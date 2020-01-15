@@ -8,42 +8,32 @@ string FindFactorial::solve(const string &s)
 {
     ss.clear();
     ss << s;
+
+    int prime_factors = 0;
+    int fac_num = 1;
+    int fac_tmp;
     string ans;
-
-    int n, count = 2, i, index, j, tmp;
-    int prime[100];
-    prime[0] = 2;
-    prime[1] = 3;
-    for (i = 5; i <= 541; i += 2)
-        if (isPrime(i))
-            prime[count++] = i;
-
-    while (ss >> n)
+    int num;
+    while (ss >> num)
     {
-        count = 0;
-        index = 2;
-        j = 0;
-        while (count < n)
+        prime_factors = 0;
+        fac_num = 1;
+        while (prime_factors < num)
         {
-            tmp = index;
-            while (index != 1)
-            {
-                if (index % prime[j] == 0)
-                {
-                    index /= prime[j];
-                    count++;
-                }
-                else
-                    j++;
-            }
-            index = tmp + 1;
-            j = 0;
+            fac_tmp = ++fac_num;
+            if (isPrime(fac_tmp))
+                prime_factors++;
+            else
+                for (int j = 2; j <= fac_tmp; j++)
+                    while (isPrime(j) && fac_tmp % j == 0)
+                    {
+                        prime_factors++;
+                        fac_tmp /= j;
+                    }
         }
-        if (count == n)
-            ans += to_string(index - 1) + "! ";
-        else
-            ans += "N ";
+        ans += (num == prime_factors ? to_string(fac_num) + "! " : "N ");
     }
     ans.erase(ans.end() - 1);
     return ans;
 }
+

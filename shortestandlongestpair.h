@@ -3,21 +3,15 @@
 
 #include "mymath.h"
 
-struct Point{
-    double x,y,z;
-};
-
 class ShortestAndLongestPair : public MyMath
 {
 public:
     ShortestAndLongestPair();
     string solve(const string &);
-    double sqrtOfDis(const Point &p1,const Point &p2)
-    {
-        return (p1.x-p2.x)*(p1.x-p2.x)+ (p1.y-p2.y)*(p1.y-p2.y)+ (p1.z-p2.z)*(p1.z-p2.z);
-    }
 private:
-
+    stringstream ss;
+    double dx, dy, dz, dis;
+    double x[10000],y[10000],z[10000];
 };
 
 #endif // SHORTESTSUMMATION_H

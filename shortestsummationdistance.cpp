@@ -42,38 +42,11 @@ string ShortestSummationDistance::solve(const string &s)
                     dp[s] = min(dp[s], disSqrt[i][j] + dp[s ^ (1 << i) ^ (1 << j)]);
         }
 
-        string s1 = to_string(dp[(1 << n) - 1]);
+        int tmp = int(round((dp[(1 << n) - 1] - int(dp[(1 << n) - 1])) * 100));
+
+        ans += to_string((int)dp[(1 << n) - 1]) + "." + to_string(tmp / 10) + to_string(tmp % 10) + " ";
         delete[] dp;
-        s1 = s1.substr(0, s1.find(".") + 4);
-        int strsize = s1.size();
-        if (s1[strsize - 1] > '4')
-            if (s1[strsize - 2] < '9')
-                s1[strsize - 2]++;
-            else
-            {
-                s1[strsize - 2] = '0';
-                if (s1[strsize - 3] < '9')
-                    s1[strsize - 3]++;
-                else
-                {
-                    s1[strsize - 3] = '0';
-                    for (int i = 0; i <= strsize - 5; i++)
-                    {
-                        if (s1[strsize - 5 - i] < '9')
-                        {
-                            s1[strsize - 5 - i]++;
-                            break;
-                        }
-                        else
-                            s1[strsize - 5 - i] = '0';
-                    }
-                }
-            }
-        s1.pop_back();
-
-        ans += s1 + ' ';
     }
-
     ans.erase(ans.end() - 1);
     return ans;
 }

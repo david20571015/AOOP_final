@@ -3,49 +3,44 @@
 ShyGame::ShyGame()
 {
 }
-string ShyGame::solve(const string &input)
+
+string ShyGame::solve(const string &s)
 {
-    string ans;
     ss.clear();
-    ss << input;
+    ss << s;
+    int n;
     ss >> n;
-    for (M = 1; M < n + 1; M <<= 1)
-        ;
-    while (ss >> p)
+    int k;
+    int step;
+    string ans;
+    while (ss >> k)
     {
-        for (i = 2 * M - 1; i > 0; i--)
+        if (k == 1)
         {
-            if (i >= M)
-                st[i] = 1;
-            else
-                st[i] = st[i << 1] + st[i << 1 | 1];
+            ans += to_string(n) + " ";
+            continue;
         }
-        int m, last, prev = 0, s;
-        for (i = 1; i <= n; i++)
+
+        int a = 0;
+        for (int i = 2; i <= n;)
         {
-            m = (p + prev) % (n - i + 1);
-            if (m == 0)
-                m = n - i + 1;
-            prev = m - 1;
-            for (s = 1; s < M;)
+            if (a + k >= i)
             {
-                if (st[s << 1] < m)
-                {
-                    m -= st[s << 1];
-                    s = s << 1 | 1;
-                }
-                else
-                    s = s << 1;
+                a = (a + k) % i++;
+                continue;
             }
-            last = s - M + 1;
-            while (s)
+            step = (i - a - 2) / (k - 1);
+            if (i + step > n)
             {
-                st[s]--;
-                s >>= 1;
+                a += (n - i + 1) * k;
+                break;
             }
+            i += step;
+            a += step * k;
         }
-        ans += to_string(last) + ' ';
+        ans += to_string(a % n + 1) + " ";
     }
+
     ans.erase(ans.end() - 1);
     return ans;
 }
