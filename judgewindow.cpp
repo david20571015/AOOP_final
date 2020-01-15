@@ -59,7 +59,7 @@ void JudgeWindow::initializeDB(){
     //改成你自己的UserName & Password
     db.setHostName("localhost");
     db.setUserName("root");
-    db.setPassword("1234567");
+    db.setPassword("l0963577306");
     db.setPort(3306);
     (db.open())?qDebug()<<"JUDGE DB OK":qDebug()<<"JUDGE DB NOT OK";
 
