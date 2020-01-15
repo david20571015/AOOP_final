@@ -7,47 +7,43 @@ FindFactorial::FindFactorial()
 string FindFactorial::solve(const string &s)
 {
     ss.clear();
-    ss<<s;
+    ss << s;
     string ans;
-    vector<int>v;
-    int n,count=2,i,index,j;
+
+    int n, count = 2, i, index, j, tmp;
     int prime[100];
-    prime[0]=2;
-    prime[1]=3;
-    for(i=5;i<=541;i+=2)
-        if(isPrime(i))
-            prime[count++]=i;
+    prime[0] = 2;
+    prime[1] = 3;
+    for (i = 5; i <= 541; i += 2)
+        if (isPrime(i))
+            prime[count++] = i;
 
-    while(ss>>n)
-        v.push_back(n);
-
-    for(i=0;i<v.size();i++)
+    while (ss >> n)
     {
-        count=0;
-        index=2;
-        j=0;
-        while(count<v[i])
+        count = 0;
+        index = 2;
+        j = 0;
+        while (count < n)
         {
-            n=index;
-            while(index!=1)
+            tmp = index;
+            while (index != 1)
             {
-                if(index%prime[j]==0)
+                if (index % prime[j] == 0)
                 {
-                    index/=prime[j];
+                    index /= prime[j];
                     count++;
                 }
                 else
                     j++;
             }
-            index=n+1;
-            j=0;
-
+            index = tmp + 1;
+            j = 0;
         }
-        if(count==v[i])
-            ans+=to_string(index-1)+"! ";
+        if (count == n)
+            ans += to_string(index - 1) + "! ";
         else
-            ans+="N ";
+            ans += "N ";
     }
-    ans.erase(ans.end()-1);
+    ans.erase(ans.end() - 1);
     return ans;
 }
