@@ -2,12 +2,7 @@
 
 TheEasyCity1::TheEasyCity1()
 {
-    query.exec("drop database if exists Database1");
-    query.exec("create database Database1");
-    query.exec("use Database1");
-    query.exec("drop table if exists TheEasyCity1");
-    query.exec("create table TheEasyCity1(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE TheEasyCity1 FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
+
 }
 
 string TheEasyCity1::solve(const string &s)
@@ -15,6 +10,14 @@ string TheEasyCity1::solve(const string &s)
     ss.clear();
     string ans;
     ss << s;
+
+    query.exec("drop database if exists Database1");
+    query.exec("create database Database1");
+    query.exec("use Database1");
+    query.exec("drop table if exists TheEasyCity1");
+    query.exec("create table TheEasyCity1(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE TheEasyCity1 FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
+
     query.exec("use Database1");
     query.exec("select * from TheEasyCity1");
 
