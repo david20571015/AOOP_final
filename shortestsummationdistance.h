@@ -10,8 +10,8 @@ public:
     string solve(const string &);
     double shortestDistance(vector<pair<int, int>> &);
 private:
-    double dp[1<<20];
-    vector<pair<int, int>> point;
+    stringstream ss;
+    int x[100],y[100];
 };
 
 #endif // SHORTESTSUMMATIONDISTANCE_H

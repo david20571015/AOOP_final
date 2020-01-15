@@ -34,7 +34,6 @@ SOURCES += \
     largefactorial.cpp \
     largestroot.cpp \
     longestcommonsubstring.cpp \
-    longestpair.cpp \
     longestpeekpalindrome.cpp \
     longestshortestdistance.cpp \
     main.cpp \
@@ -48,7 +47,6 @@ SOURCES += \
     myother.cpp \
     mystring.cpp \
     mytree.cpp \
-    prime.cpp \
     problemset.cpp \
     scheduler.cpp \
     shortestandlongestpair.cpp \
@@ -79,7 +77,6 @@ HEADERS += \
     largefactorial.h \
     largestroot.h \
     longestcommonsubstring.h \
-    longestpair.h \
     longestpeekpalindrome.h \
     longestshortestdistance.h \
     mainwindow.h \
@@ -92,7 +89,6 @@ HEADERS += \
     myother.h \
     mystring.h \
     mytree.h \
-    prime.h \
     problems.h \
     problemset.h \
     scheduler.h \
