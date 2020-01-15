@@ -8,9 +8,10 @@ class FibonacciOfFibonacci : public MyMath
 public:
     FibonacciOfFibonacci();
     string solve(const string &);
-    long long int fib(int n);
+    inline long long int fib(int n);
 
 private:
+    stringstream ss;
     int digit[60];
 };
 
