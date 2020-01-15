@@ -5,9 +5,11 @@
 
 class LongestPeekPalindrome : public MyString
 {
+    int L[500];
 public:
     LongestPeekPalindrome();
     string solve(const string &);
+    string findLongestPalindromicString(const string &);
     virtual ~LongestPeekPalindrome(){}
 };
 

@@ -27,7 +27,7 @@ string LargeFactorial::solve(const string &s)
     }
 
     int digit = 2399;
-    for (; digit >= 0 && !fac[digit]; digit--)
+    for (;!fac[digit]; digit--)
         ;
     stringstream tmp;
     string ans;

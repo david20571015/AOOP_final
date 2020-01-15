@@ -2,7 +2,6 @@
 #define LONGESTSHORTESTDISTANCE_H
 
 #include "mydatabase.h"
-#include <bits/stdc++.h>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 

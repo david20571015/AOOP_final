@@ -12,7 +12,7 @@ string Maze::solve(const string &s)
     int row, col;
     ss >> row >> col;
 
-    char maze[100][100];
+    char maze[300][300];
 
     char tmp;
     pair<int, int> start, end;
@@ -29,7 +29,7 @@ string Maze::solve(const string &s)
                 maze[i][j] = '0';
             }
         }
-    char route[100][100];
+    char route[300][300];
     memcpy(route,maze,sizeof(maze));
 
     pair<int, int> curr(start);
@@ -82,10 +82,7 @@ string Maze::solve(const string &s)
 
     for (int i = 0; i < col; i++)
         for (int j = 0; j < row; j++)
-        {
-            ans += route[i][j];
-            ans += ' ';
-        }
+            ans += route[i][j]+' ';
     ans.erase(ans.end() - 1);
 
     return ans;

@@ -13,57 +13,45 @@ LongestShortestDistance::LongestShortestDistance()
 
 string LongestShortestDistance::solve(const string &s)
 {
-    query.exec("use Database5");
-    stringstream ss;
-    string ans;
-    string t1, t4, al = "al", st;
-    int n2, n3;
+//    QSqlQuery query(database);
+//    QSqlQuery query;
+//    cout<<"1"<<endl;
+    query.exec("DROP DATABASE IF EXISTS CITYDATABASE;");
+//    cout<<"2"<<endl;
+    query.exec("CREATE DATABASE CITYDATABASE;");
+    query.exec("USE CITYDATABASE;");
+    query.exec("DROP TABLE IF EXISTS CITYTABLE;");
+    query.exec("CREATE TABLE CITYTABLE(ID INT,COUNTRY VARCHAR(50),CITY VARCHAR(60),LAT DOUBLE,LON DOUBLE,PRIMARY KEY(ID));");
+    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city_forFinal4.csv' INTO TABLE CITYTABLE FIELDS ENCLOSED BY '\"' TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;");
 
-//    query.exec("drop database if exists Database5");
-//    query.exec("create database Database5");
+    stringstream ss,so;
+    int n,a,b;
+    string al_ra;
+    ss<<s;
+    ss>>n>>a>>b>>al_ra;
 
-//    query.exec("drop table if exists CityList");
-//    query.exec("create table CityList(Id int primary key, Country char(50), City char(60), Lat double, Lon double)");
-//    query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE CityList FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
-    ss << s;
-    ss >> t1;
-    ss >> n2;
-    ss >> n3;
-    ss >> t4;
-    if (t4 == al)
-    {
-        st = "select max(round(sqrt(pow(a.col1-b.col1,2)+pow(a.col2-b.col2,2)), 4)) as max, min(round(sqrt(pow(a.col1-b.col1,2)+pow(a.col2-b.col2,2)), 4))as min from ";
-        st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
-        st += "as t2 order by City, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as a join";
-        st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
-        st += "as t2 order by City, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as b on ((a.col1 != b.col1 or a.col2 != b.col2) and a.City != b.City)";
-    }
+    string command="SELECT MAX(DISTANCE),MIN(DISTANCE) FROM (SELECT ROUND(SQRT(POW(P1.RLON-P2.RLON,2)+POW(P1.RLAT-P2.RLAT,2)),4) AS DISTANCE FROM";
+    string common="(SELECT * FROM(SELECT ID,COUNTRY,CITY,ROUND(LAT,"+to_string(n)+")AS RLAT,ROUND(LON,"+to_string(n)+")AS RLON FROM CITYTABLE GROUP BY RLAT,RLON)";
+    command+=(common+"AS P3 ORDER BY CITY ");
+    if(al_ra=="al")
+        command+=("ASC,ID ASC LIMIT ");
     else
-    {
-        st = "select max(round(sqrt(pow(a.col1-b.col1,2)+pow(a.col2-b.col2,2)), 4)) as max, min(round(sqrt(pow(a.col1-b.col1,2)+pow(a.col2-b.col2,2)), 4))as min from ";
-        st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
-        st += "as t2 order by City desc, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as a join";
-        st += "(select * from (select round(Lat, " + t1 + ") as col1, round(Lon, " + t1 + ") as col2, City, Id from CityList as t1 group by col1, col2) ";
-        st += "as t2 order by City desc, Id asc limit " + to_string(n2 - 1) + ", " + to_string(n3 - n2 + 1) + ")as b on ((a.col1 != b.col1 or a.col2 != b.col2) and a.City > b.City)";
-    }
-    query.exec(QString::fromStdString(st));
+        command+=("DESC,ID ASC LIMIT ");
+    command+=(to_string(b-a+1)+" OFFSET "+to_string(a-1)+")AS P1 INNER JOIN");
+    command+=(common+"AS P4 ORDER BY CITY ");
+    if(al_ra=="al")
+        command+=("ASC,ID ASC LIMIT ");
+    else
+        command+=("DESC,ID ASC LIMIT ");
+    command+=(to_string(b-a+1)+" OFFSET "+to_string(a-1)+")AS P2 ON P1.RLAT!=P2.RLAT OR P1.RLON!=P2.RLON)AS PP;");
+
+    query.exec(command.c_str());
+
     query.next();
-
-
-    if(query.value(0).toDouble() == 0)
-    {
-        ans = "NULL NULL";
-    }
+    if(query.value(0).isNull()&&query.value(1).isNull())
+        so<<"NULL NULL";
     else
-    {
-        ss.clear();
-        ss << fixed << setprecision(4) << query.value(0).toDouble();
-        ss >> t1;
-        ss.clear();
-        ans = t1;
-        ss << fixed << setprecision(4) << query.value(1).toDouble();
-        ss >> t1;
-        ans += " " + t1;
-    }
-    return ans;
+        so<<fixed<<setprecision(4)<<query.value(0).toDouble()<<" "<<query.value(1).toDouble();
+
+    return so.str();
 }

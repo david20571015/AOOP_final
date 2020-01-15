@@ -7,43 +7,44 @@ LongestPeekPalindrome::LongestPeekPalindrome()
 
 string LongestPeekPalindrome::solve(const string &s)
 {
-    if (s.size() == 1)
-        return s;
-
-    string tmp=s;
+    string tmp = s;
     preProcess(tmp);
-    int len=tmp.size();
+    int N = tmp.length();
+    if (N == 0)
+        return "";
 
+    N = 2 * N + 1;
 
-    string str = "^";
-    for (int i = 0; i < len; i++)
-        str += ("#" + tmp.substr(i, 1));
-    str += "#$";
+    L[0] = 0;
+    L[1] = 1;
+    int C = 1;
+    int R = 2;
+    int maxLPSLength = 0;
+    int maxLPSCenterPosition = 0;
+    int diff = -1;
 
-    len = len * 2 + 1;
-    vector<int> p(len, 0);
-    int c = 0, r = 0;
-    for (int i = 1; i < len - 1; i++)
+    for (int i = 2; i < N; i++)
     {
-        p[i] = (r > i) ? min(r - i, p[2 * c - i]) : 0;
-        while (str[i + 1 + p[i]] == str[i - 1 - p[i]])
-            p[i]++;
-        if (i + p[i] > r)
+        L[i] = 0;
+        diff = R - i;
+        if (diff > 0)
+            L[i] = min(L[2 * C - i], diff);
+
+        while ((i + L[i]) < N && (i - L[i]) > 0 && (((i + L[i]) & 1) || (tmp[(i + L[i] + 1) / 2] == tmp[(i - L[i] - 1) / 2])))
+            L[i]++;
+
+        if (L[i] > maxLPSLength)
         {
-            c = i;
-            r = i + p[i];
+            maxLPSLength = L[i];
+            maxLPSCenterPosition = i;
+        }
+
+        if (i + L[i] > R)
+        {
+            C = i;
+            R = i + L[i];
         }
     }
 
-    string ans, comp;
-
-    for (int i = 1; i < len - 1; i++)
-    {
-        comp = tmp.substr((i - 1 - p[i]) / 2, p[i]);
-        if (ans.size() < comp.size())
-            ans = comp;
-        else if (ans.size() == comp.size() && (ans + string(comp.size() - ans.size(), 127)).compare(comp) > 0)
-            ans = comp;
-    }
-    return ans;
+    return tmp.substr((maxLPSCenterPosition - maxLPSLength) / 2, maxLPSLength);
 }

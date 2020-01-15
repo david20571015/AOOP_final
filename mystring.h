@@ -14,7 +14,8 @@ public:
         unsigned long long punct_pos;
         while ((punct_pos = s.find_first_of(",.?!")) != string::npos)
             s.erase(s.begin() + punct_pos);
-        transform(s.begin(), s.end(), s.begin(), ::toupper);
+        for (string::iterator i = s.begin(); i != s.end(); i++)
+                (*i) = toupper(*i);
     }
 };
 
