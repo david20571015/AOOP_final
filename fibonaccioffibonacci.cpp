@@ -17,13 +17,13 @@ string FibonacciOfFibonacci::solve(const string &s)
     string ans;
     int n;
     while (ss >> n)
-        ans += to_string(digit[fib(n) % 60]) + ' ';
+        ans += to_string(digit[fib(n)]) + ' ';
 
     ans.erase(ans.end() - 1);
     return ans;
 }
 
-long long int FibonacciOfFibonacci::fib(int n)
+long long int FibonacciOfFibonacci::fib(int &n)
 {
     long long int sum1 = 0, sum2 = 1, sum3 = 0;
     n %= 60;
