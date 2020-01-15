@@ -13,24 +13,27 @@ string Maze::solve(const string &s)
     ss >> row >> col;
 
     char maze[300][300];
-
-    char tmp;
+    char route[300][300];
     pair<int, int> start, end;
     for (int i = 0; i < col; i++)
         for (int j = 0; j < row; j++)
         {
-            ss >> tmp;
-            maze[i][j] = tmp;
-            if (tmp == 'S')
-                start = make_pair(i, j);
-            else if (tmp == 'E')
+            ss >> maze[i][j];
+            route[i][j] = maze[i][j];
+            if (maze[i][j] == 'S')
             {
-                end = make_pair(i, j);
+                start.first = i;
+                start.second = j;
+            }
+
+            else if (maze[i][j] == 'E')
+            {
+                end.first = i;
+                end.second = j;
                 maze[i][j] = '0';
+                route[i][j] = '0';
             }
         }
-    char route[300][300];
-    memcpy(route,maze,sizeof(maze));
 
     pair<int, int> curr(start);
     stack<pair<int, int>> path;
