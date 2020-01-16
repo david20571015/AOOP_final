@@ -15,7 +15,7 @@
 #include <vector>
 #include <map>
 
-//#include <people.h>
+#include <people.h>
 
 #define FLOORNUMBER     27
 #define ELEVATORLIMIT   10

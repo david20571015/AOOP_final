@@ -47,6 +47,7 @@ SOURCES += \
     myother.cpp \
     mystring.cpp \
     mytree.cpp \
+    people.cpp \
     problemset.cpp \
     scheduler.cpp \
     shortestandlongestpair.cpp \
@@ -89,6 +90,7 @@ HEADERS += \
     myother.h \
     mystring.h \
     mytree.h \
+    people.h \
     problems.h \
     problemset.h \
     scheduler.h \
