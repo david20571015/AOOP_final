@@ -70,7 +70,7 @@ void Building::getInitial(int *d,int *p)
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("l0963577306");
+    database.setPassword("nctuece");
     database.setPort(3306);
     int t = database.open();
     QSqlQuery query;
